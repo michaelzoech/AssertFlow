@@ -1,36 +1,68 @@
-//
-//  AssertFlowTests.swift
-//  AssertFlowTests
-//
-//  Created by Michael Zoech on 6/1/15.
-//  Copyright (c) 2015 Michael Zoech. All rights reserved.
-//
 
-import Cocoa
 import XCTest
+import AssertFlow
 
-class AssertFlowTests: XCTestCase {
+class CaptureAssertHandler : AssertHandler {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var called: Bool
+    
+    override init() {
+        called = false
+        super.init()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    override func fail<T>(matcher: AbstractMatcher<T>, message: String) {
+        self.called = true
     }
+}
+
+class AssertFlowTest: XCTestCase {
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
+//    func testDict() {
+//        var dict: [String:String] = [:];
+//        dict["foo"] = "bar";
+//        
+//        assertThat(dict).containsKey("foo");
+//        XCTAssertFalse(handler.called)
+//        assertThat(dict).containsKey("foo2");
+//        XCTAssertTrue(handler.called)
+//    }
+//    
+//    func testString() {
+//        var s = "This is a longer string for testing"
+//        
+//        assertThat(s).contains("a longer")
+//        XCTAssertFalse(handler.called)
+//        assertThat(s).contains("unknown")
+//        XCTAssertTrue(handler.called)
+//    }
+//    
+//    func testOptionalSupport() {
+//        var d: [String:String] = ["a": "b", "c": "d"]
+//        
+//        assertThat(d["a"]).equals("b")
+//        assertThat(d["d"]).isNil()
+//    }
+//    
+//    func testSequencTypeContains() {
+//        var a = ["a", "b", "c", "d"]
+//        
+//        assertThat(a).contains("a")
+//        XCTAssertFalse(handler.called)
+//        assertThat(a).contains(1)
+//        XCTAssertTrue(handler.called)
+//    }
+//    
+//    func testSequenceTypeContainsInOrder() {
+//        var a = ["a", "b", "c", "d"]
+//        
+//        assertThat(a).containsInOrder("a", "b")
+//        XCTAssertFalse(handler.called)
+//        assertThat(a).containsInOrder("b", "d")
+//        XCTAssertFalse(handler.called)
+//        assertThat(a).containsInOrder("a", "c", "b")
+//        XCTAssertTrue(handler.called)
+//    }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+    //assertThat(a).containsOneOf("z", "d")
 }

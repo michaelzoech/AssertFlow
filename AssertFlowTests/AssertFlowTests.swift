@@ -18,16 +18,6 @@ class CaptureAssertHandler : AssertHandler {
 
 class AssertFlowTest: XCTestCase {
     
-//    func testDict() {
-//        var dict: [String:String] = [:];
-//        dict["foo"] = "bar";
-//        
-//        assertThat(dict).containsKey("foo");
-//        XCTAssertFalse(handler.called)
-//        assertThat(dict).containsKey("foo2");
-//        XCTAssertTrue(handler.called)
-//    }
-//    
 //    func testString() {
 //        var s = "This is a longer string for testing"
 //        

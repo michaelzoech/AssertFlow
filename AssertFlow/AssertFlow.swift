@@ -36,3 +36,7 @@ public struct Actual<T> {
 public func assertThat<T: IntegerType>(actual: T?, file: String = __FILE__, line: UInt = __LINE__) -> IntegerTypeMatcher<T> {
     return IntegerTypeMatcher(actual: Actual(value: actual, file: file, line: line))
 }
+
+public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = __FILE__, line: UInt = __LINE__) -> DictionaryMatcher<K,V> {
+    return DictionaryMatcher(actual: Actual(value: actual, file: file, line: line))
+}

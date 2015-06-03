@@ -15,6 +15,8 @@
 		29A5D59F1B1D844D0053B455 /* IntegerTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59E1B1D844D0053B455 /* IntegerTypeMatcherTest.swift */; };
 		29A5D5A11B1D903F0053B455 /* DictionaryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */; };
 		29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
+		29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */; };
+		29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		29A5D59E1B1D844D0053B455 /* IntegerTypeMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerTypeMatcherTest.swift; sourceTree = "<group>"; };
 		29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcher.swift; sourceTree = "<group>"; };
 		29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcherTest.swift; sourceTree = "<group>"; };
+		29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcher.swift; sourceTree = "<group>"; };
+		29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				29A5D5991B1D5A750053B455 /* AbstractMatcher.swift */,
 				29A5D59B1B1D5B4D0053B455 /* IntegerTypeMatcher.swift */,
 				29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */,
+				29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				29A5D59E1B1D844D0053B455 /* IntegerTypeMatcherTest.swift */,
 				29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */,
+				29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 				29A5D59C1B1D5B4D0053B455 /* IntegerTypeMatcher.swift in Sources */,
 				29A5D59A1B1D5A750053B455 /* AbstractMatcher.swift in Sources */,
 				29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */,
+				29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A5D58C1B1D59720053B455 /* AssertFlowTests.swift in Sources */,
+				29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */,
 				29A5D59F1B1D844D0053B455 /* IntegerTypeMatcherTest.swift in Sources */,
 				29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */,
 			);
@@ -361,15 +369,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = AssertFlow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -385,15 +395,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = AssertFlow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -449,6 +461,7 @@
 				29A5D5911B1D59720053B455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29A5D5921B1D59720053B455 /* Build configuration list for PBXNativeTarget "AssertFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +470,7 @@
 				29A5D5941B1D59720053B455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

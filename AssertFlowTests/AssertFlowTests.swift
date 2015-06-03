@@ -19,13 +19,6 @@ class CaptureAssertHandler : AssertHandler {
 class AssertFlowTest: XCTestCase {
     
 //    
-//    func testOptionalSupport() {
-//        var d: [String:String] = ["a": "b", "c": "d"]
-//        
-//        assertThat(d["a"]).equals("b")
-//        assertThat(d["d"]).isNil()
-//    }
-//    
 //    func testSequencTypeContains() {
 //        var a = ["a", "b", "c", "d"]
 //        

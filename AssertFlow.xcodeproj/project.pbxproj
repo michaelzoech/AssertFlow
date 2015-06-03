@@ -17,6 +17,7 @@
 		29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
 		29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */; };
 		29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */; };
+		29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcherTest.swift; sourceTree = "<group>"; };
 		29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcher.swift; sourceTree = "<group>"; };
 		29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTest.swift; sourceTree = "<group>"; };
+		29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMatcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				29A5D59E1B1D844D0053B455 /* IntegerTypeMatcherTest.swift */,
 				29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */,
 				29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */,
+				29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A5D58C1B1D59720053B455 /* AssertFlowTests.swift in Sources */,
+				29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */,
 				29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */,
 				29A5D59F1B1D844D0053B455 /* IntegerTypeMatcherTest.swift in Sources */,
 				29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */,

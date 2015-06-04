@@ -44,3 +44,7 @@ public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = 
 public func assertThat(actual: String?, file: String = __FILE__, line: UInt = __LINE__) -> StringMatcher<String> {
     return StringMatcher(actual: Actual(value: actual, file: file, line: line))
 }
+
+public func assertThat<T: SequenceType>(actual: T?, file: String = __FILE__, line: UInt = __LINE__) -> SequenceTypeMatcher<T> {
+    return SequenceTypeMatcher(actual: Actual(value: actual, file: file, line: line))
+}

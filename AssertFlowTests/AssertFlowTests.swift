@@ -15,29 +15,3 @@ class CaptureAssertHandler : AssertHandler {
         self.called = true
     }
 }
-
-class AssertFlowTest: XCTestCase {
-    
-//    
-//    func testSequencTypeContains() {
-//        var a = ["a", "b", "c", "d"]
-//        
-//        assertThat(a).contains("a")
-//        XCTAssertFalse(handler.called)
-//        assertThat(a).contains(1)
-//        XCTAssertTrue(handler.called)
-//    }
-//    
-//    func testSequenceTypeContainsInOrder() {
-//        var a = ["a", "b", "c", "d"]
-//        
-//        assertThat(a).containsInOrder("a", "b")
-//        XCTAssertFalse(handler.called)
-//        assertThat(a).containsInOrder("b", "d")
-//        XCTAssertFalse(handler.called)
-//        assertThat(a).containsInOrder("a", "c", "b")
-//        XCTAssertTrue(handler.called)
-//    }
-    
-    //assertThat(a).containsOneOf("z", "d")
-}

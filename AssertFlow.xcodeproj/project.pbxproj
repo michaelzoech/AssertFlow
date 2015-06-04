@@ -18,6 +18,8 @@
 		29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */; };
 		29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */; };
 		29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */; };
+		29A5D5AF1B1EE5030053B455 /* SequenceTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AE1B1EE5030053B455 /* SequenceTypeMatcher.swift */; };
+		29A5D5B11B1EE5160053B455 /* SequenceTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcher.swift; sourceTree = "<group>"; };
 		29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTest.swift; sourceTree = "<group>"; };
 		29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMatcherTest.swift; sourceTree = "<group>"; };
+		29A5D5AE1B1EE5030053B455 /* SequenceTypeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeMatcher.swift; sourceTree = "<group>"; };
+		29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeMatcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				29A5D59B1B1D5B4D0053B455 /* IntegerTypeMatcher.swift */,
 				29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */,
 				29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */,
+				29A5D5AE1B1EE5030053B455 /* SequenceTypeMatcher.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */,
 				29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */,
 				29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */,
+				29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				29A5D59A1B1D5A750053B455 /* AbstractMatcher.swift in Sources */,
 				29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */,
 				29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */,
+				29A5D5AF1B1EE5030053B455 /* SequenceTypeMatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 				29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */,
 				29A5D59F1B1D844D0053B455 /* IntegerTypeMatcherTest.swift in Sources */,
 				29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */,
+				29A5D5B11B1EE5160053B455 /* SequenceTypeMatcherTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

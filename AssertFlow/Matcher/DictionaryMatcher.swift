@@ -14,4 +14,20 @@ public class DictionaryMatcher<K: Hashable, V> : AbstractMatcher<Dictionary<K,V>
             }
         }
     }
+    
+    public func containsKey<X: Equatable>(key: K, withValue: X) {
+        if unpack() {
+            if let value = actual[key] {
+                if let castedValue = value as? X {
+                    if castedValue != withValue {
+                        AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key) with value \(withValue)")
+                    }
+                } else {
+                    AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key) with value \(withValue)")
+                }
+            } else {
+                AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key)")
+            }
+        }
+    }
 }

@@ -12,14 +12,31 @@ class DictionaryMatcherTest : XCTestCase {
         AssertHandler.instance = handler
     }
     
-    func testDict() {
-        var dict: [String:String] = [:];
+    func testContainsKey() {
+        var dict: [String:String] = [:]
         dict["foo"] = "bar";
         
-        assertThat(dict).containsKey("foo");
+        assertThat(dict).containsKey("foo")
         XCTAssertFalse(handler.called)
-        assertThat(dict).containsKey("foo2");
+        assertThat(dict).containsKey("foo2")
         XCTAssertTrue(handler.called)
     }
 
+    func testContainsKeyWithValue() {
+        var dict: [String:Int] = [:]
+        dict["a"] = 1
+        
+        assertThat(dict).containsKey("a", withValue: 1)
+        XCTAssertFalse(handler.called)
+        assertThat(dict).containsKey("a", withValue: 2)
+        XCTAssertTrue(handler.called)
+    }
+    
+    func testContainsKeyWithValueWithNonExistingKey() {
+        var dict: [String:Int] = [:]
+        dict["a"] = 1
+        
+        assertThat(dict).containsKey("b", withValue: 1)
+        XCTAssertTrue(handler.called)
+    }
 }

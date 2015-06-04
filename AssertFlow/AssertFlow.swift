@@ -16,35 +16,35 @@ public class AssertHandler {
 public class XCTestAssertHandler : AssertHandler {
     
     override public func fail<T>(matcher: AbstractMatcher<T>, message: String) {
-        XCTFail(message, file: matcher.actual.file, line: matcher.actual.line)
+        XCTFail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
     }
 }
 
-public struct Actual<T> {
+public struct MatchInfo<T> {
     
-    let value: T?
+    let actual: T?
     let file: String
     let line: UInt
     
-    public init(value: T?, file: String, line: UInt) {
-        self.value = value
+    public init(actual: T?, file: String, line: UInt) {
+        self.actual = actual
         self.file = file
         self.line = line
     }
 }
 
 public func assertThat<T: IntegerType>(actual: T?, file: String = __FILE__, line: UInt = __LINE__) -> IntegerTypeMatcher<T> {
-    return IntegerTypeMatcher(actual: Actual(value: actual, file: file, line: line))
+    return IntegerTypeMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }
 
 public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = __FILE__, line: UInt = __LINE__) -> DictionaryMatcher<K,V> {
-    return DictionaryMatcher(actual: Actual(value: actual, file: file, line: line))
+    return DictionaryMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }
 
 public func assertThat(actual: String?, file: String = __FILE__, line: UInt = __LINE__) -> StringMatcher<String> {
-    return StringMatcher(actual: Actual(value: actual, file: file, line: line))
+    return StringMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }
 
 public func assertThat<T: SequenceType>(actual: T?, file: String = __FILE__, line: UInt = __LINE__) -> SequenceTypeMatcher<T> {
-    return SequenceTypeMatcher(actual: Actual(value: actual, file: file, line: line))
+    return SequenceTypeMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

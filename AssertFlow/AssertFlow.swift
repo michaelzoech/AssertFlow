@@ -16,7 +16,7 @@ public class AssertHandler {
 public class XCTestAssertHandler : AssertHandler {
     
     override public func fail<T>(matcher: AbstractMatcher<T>, message: String) {
-        XCTFail(message, file: matcher.file, line: matcher.line)
+        XCTFail(message, file: matcher.actual.file, line: matcher.actual.line)
     }
 }
 

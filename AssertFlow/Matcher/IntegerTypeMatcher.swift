@@ -8,12 +8,10 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
     }
     
     public func greaterThan(expected: T) {
-        if let a = value {
-            if (a <= expected) {
-                AssertHandler.instance.fail(self, message: "Expected \(a) to be greater than \(expected)")
+        if unpack() {
+            if value <= expected {
+                AssertHandler.instance.fail(self, message: "Expected \(value) to be greater than \(expected)")
             }
-        } else {
-            AssertHandler.instance.fail(self, message: "Actual expected to be greater than \(expected), but was nil")
         }
     }
 }

@@ -8,12 +8,10 @@ public class DictionaryMatcher<K: Hashable, V> : AbstractMatcher<Dictionary<K,V>
     }
     
     public func containsKey(expected: K) {
-        if let a = value {
-            if a[expected] == nil {
+        if unpack () {
+            if value[expected] == nil {
                 AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(expected)")
             }
-        } else {
-            AssertHandler.instance.fail(self, message: "Actual expected to contain key \(expected), but was nil")
         }
     }
 }

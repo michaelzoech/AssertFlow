@@ -8,8 +8,8 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
     }
     
     public func contains<E: Equatable>(expected: E) {
-        if let a = value {
-            for e in a {
+        if unpack() {
+            for e in value {
                 if let e2 = e as? E {
                     if expected == e2 {
                         return
@@ -17,16 +17,14 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                 }
             }
             AssertHandler.instance.fail(self, message: "Expected sequence to contain \(expected)")
-        } else {
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain \(expected) but was nil")
         }
     }
     
     public func containsInOrder<E: Equatable>(expected: E...) {
-        if let a = value {
+        if unpack() {
             var g = expected.generate()
             var next = g.next()
-            for e in a {
+            for e in value {
                 if let e2 = e as? E {
                     if next == e2 {
                         next = g.next()
@@ -37,15 +35,13 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                 }
             }
             AssertHandler.instance.fail(self, message: "Expected sequence to contain in order \(expected)")
-        } else {
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain in order \(expected) but was nil")
         }
     }
     
     public func containsOneOf<E: Equatable>(expected: E...) {
-        if let a = value {
+        if unpack() {
             for e in expected {
-                for a2 in a {
+                for a2 in value {
                     if let a3 = a2 as? E {
                         if (a3 == e) {
                             return
@@ -54,8 +50,6 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                 }
             }
             AssertHandler.instance.fail(self, message: "Expected sequence to contain one of \(expected)")
-        } else {
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain one of \(expected) but was nil")
         }
     }
 }

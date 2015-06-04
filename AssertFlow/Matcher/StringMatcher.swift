@@ -8,12 +8,10 @@ public class StringMatcher<S> : AbstractMatcher<String> {
     }
     
     public func contains(expected: String) {
-        if let a = value {
-            if a.rangeOfString(expected) == nil {
-                AssertHandler.instance.fail(self, message: "Expected string \"\(a)\" to contain \"\(expected)\"")
+        if unpack() {
+            if value.rangeOfString(expected) == nil {
+                AssertHandler.instance.fail(self, message: "Expected string \"\(value)\" to contain \"\(expected)\"")
             }
-        } else {
-            AssertHandler.instance.fail(self, message: "Expected string to contain \"\(expected)\" but was nil")
         }
     }
 }

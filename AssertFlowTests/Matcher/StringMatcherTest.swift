@@ -20,4 +20,16 @@ class StringMatcherTest : XCTestCase {
         assertThat(s).contains("unknown")
         XCTAssertTrue(handler.called)
     }
+    
+    func testContainsSubstringWithOptional() {
+        var s: String? = "Hello"
+        
+        assertThat(s).contains("ll")
+        XCTAssertFalse(handler.called)
+        
+        s = nil
+        
+        assertThat(s).contains("ll")
+        XCTAssertTrue(handler.called)
+    }
 }

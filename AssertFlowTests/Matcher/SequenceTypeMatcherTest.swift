@@ -32,6 +32,16 @@ class SequenceTypeMatcherTest : XCTestCase {
         XCTAssertTrue(handler.called)
     }
     
-    //assertThat(a).containsOneOf("z", "d")
-    //containsall
+    func testContainsOneOf() {
+        var a = ["a", "b", "c", "d"]
+        
+        assertThat(a).containsOneOf("a", "x")
+        XCTAssertFalse(handler.called)
+        assertThat(a).containsOneOf("x", "a")
+        XCTAssertFalse(handler.called)
+        assertThat(a).containsOneOf("x", "d")
+        XCTAssertFalse(handler.called)
+        assertThat(a).containsOneOf("x", "y")
+        XCTAssertTrue(handler.called)
+    }
 }

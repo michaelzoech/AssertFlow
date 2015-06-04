@@ -41,4 +41,21 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
             AssertHandler.instance.fail(self, message: "Expected sequence to contain in order \(expected) but was nil")
         }
     }
+    
+    public func containsOneOf<E: Equatable>(expected: E...) {
+        if let a = value {
+            for e in expected {
+                for a2 in a {
+                    if let a3 = a2 as? E {
+                        if (a3 == e) {
+                            return
+                        }
+                    }
+                }
+            }
+            AssertHandler.instance.fail(self, message: "Expected sequence to contain one of \(expected)")
+        } else {
+            AssertHandler.instance.fail(self, message: "Expected sequence to contain one of \(expected) but was nil")
+        }
+    }
 }

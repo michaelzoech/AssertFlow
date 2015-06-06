@@ -10,7 +10,7 @@ public class StringMatcher<S> : AbstractMatcher<String> {
     public func contains(expected: String) {
         if unpack() {
             if actual.rangeOfString(expected) == nil {
-                AssertHandler.instance.fail(self, message: "Expected string \"\(actual)\" to contain \"\(expected)\"")
+                fail("Expected string \"\(actual)\" to contain \"\(expected)\"")
             }
         }
     }

@@ -12,7 +12,7 @@ public class AbstractMatcher<T> {
     
     public func isNil() {
         if let a = matchInfo.actual {
-            AssertHandler.instance.fail(self, message: "Expected nil, but was \(a)")
+            fail("Expected nil, but was \(a)")
         }
     }
     
@@ -20,20 +20,24 @@ public class AbstractMatcher<T> {
         if unpack() {
             if let a = actual as? X {
                 if expected != a {
-                    AssertHandler.instance.fail(self, message: "Expected \(a) to equal \(expected)")
+                    fail("Expected \(a) to equal \(expected)")
                 }
             } else {
-                AssertHandler.instance.fail(self, message: "Expected \(actual) to equal \(expected)")
+                fail("Expected \(actual) to equal \(expected)")
             }
         }
     }
     
     func unpack() -> Bool {
         if matchInfo.actual == nil {
-            AssertHandler.instance.fail(self, message: "MatchInfo for assertion is nil")
+            fail("MatchInfo for assertion is nil")
             return false
         } else {
             return true
         }
+    }
+    
+    func fail(message: String) {
+        AssertHandler.instance.fail(self, message: message)
     }
 }

@@ -16,7 +16,7 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                     }
                 }
             }
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain \(expected)")
+            fail("Expected sequence to contain \(expected)")
         }
     }
     
@@ -34,7 +34,7 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                     }
                 }
             }
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain in order \(expected)")
+            fail("Expected sequence to contain in order \(expected)")
         }
     }
     
@@ -49,7 +49,7 @@ public class SequenceTypeMatcher<T: SequenceType> : AbstractMatcher<T> {
                     }
                 }
             }
-            AssertHandler.instance.fail(self, message: "Expected sequence to contain one of \(expected)")
+            fail("Expected sequence to contain one of \(expected)")
         }
     }
 }

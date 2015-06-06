@@ -10,7 +10,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
     public func greaterThan(expected: T) {
         if unpack() {
             if actual <= expected {
-                AssertHandler.instance.fail(self, message: "Expected \(actual) to be greater than \(expected)")
+                fail("Expected \(actual) to be greater than \(expected)")
             }
         }
     }
@@ -18,7 +18,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
     public func greaterOrEqual(expected: T) {
         if unpack() {
             if actual < expected {
-                AssertHandler.instance.fail(self, message: "Expected \(actual) to be greater or equal than \(expected)")
+                fail("Expected \(actual) to be greater or equal than \(expected)")
             }
         }
     }
@@ -26,7 +26,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
     public func smallerThan(expected: T) {
         if unpack() {
             if actual >= expected {
-                AssertHandler.instance.fail(self, message: "Expected \(actual) to be smaller than \(expected)")
+                fail("Expected \(actual) to be smaller than \(expected)")
             }
         }
     }
@@ -34,7 +34,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
     public func smallerOrEqual(expected: T) {
         if unpack() {
             if actual > expected {
-                AssertHandler.instance.fail(self, message: "Expected \(actual) to be smaller or equal than \(expected)")
+                fail("Expected \(actual) to be smaller or equal than \(expected)")
             }
         }
     }

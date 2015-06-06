@@ -10,7 +10,7 @@ public class DictionaryMatcher<K: Hashable, V> : AbstractMatcher<Dictionary<K,V>
     public func containsKey(expected: K) {
         if unpack () {
             if actual[expected] == nil {
-                AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(expected)")
+                fail("Expected dictionary to contain key \(expected)")
             }
         }
     }
@@ -20,13 +20,13 @@ public class DictionaryMatcher<K: Hashable, V> : AbstractMatcher<Dictionary<K,V>
             if let value = actual[key] {
                 if let castedValue = value as? X {
                     if castedValue != withValue {
-                        AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key) with value \(withValue)")
+                        fail("Expected dictionary to contain key \(key) with value \(withValue)")
                     }
                 } else {
-                    AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key) with value \(withValue)")
+                    fail("Expected dictionary to contain key \(key) with value \(withValue)")
                 }
             } else {
-                AssertHandler.instance.fail(self, message: "Expected dictionary to contain key \(key)")
+                fail("Expected dictionary to contain key \(key)")
             }
         }
     }

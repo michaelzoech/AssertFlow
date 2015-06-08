@@ -20,10 +20,26 @@
 		29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */; };
 		29A5D5AF1B1EE5030053B455 /* SequenceTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AE1B1EE5030053B455 /* SequenceTypeMatcher.swift */; };
 		29A5D5B11B1EE5160053B455 /* SequenceTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */; };
+		29A5D5D91B254D4C0053B455 /* AssertFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D58B1B1D59720053B455 /* AssertFlowTests.swift */; };
+		29A5D5DA1B254D4C0053B455 /* AbstractMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */; };
+		29A5D5DB1B254D4C0053B455 /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */; };
+		29A5D5DC1B254D4C0053B455 /* IntegerTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59E1B1D844D0053B455 /* IntegerTypeMatcherTest.swift */; };
+		29A5D5DD1B254D4C0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
+		29A5D5DE1B254D4C0053B455 /* SequenceTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */; };
+		29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
+		29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5E81B254DE90053B455 /* DictionaryTests.swift */; };
+		29A5D5EB1B2550530053B455 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29A5D5EA1B2550530053B455 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		29A5D5861B1D59720053B455 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29A5D5701B1D59720053B455 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29A5D5781B1D59720053B455;
+			remoteInfo = AssertFlow;
+		};
+		29A5D5D71B254D4C0053B455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29A5D5701B1D59720053B455 /* Project object */;
 			proxyType = 1;
@@ -49,6 +65,9 @@
 		29A5D5AC1B1EE2B00053B455 /* AbstractMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractMatcherTest.swift; sourceTree = "<group>"; };
 		29A5D5AE1B1EE5030053B455 /* SequenceTypeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeMatcher.swift; sourceTree = "<group>"; };
 		29A5D5B01B1EE5160053B455 /* SequenceTypeMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeMatcherTest.swift; sourceTree = "<group>"; };
+		29A5D5E51B254D4C0053B455 /* AssertFlowExamples.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertFlowExamples.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A5D5E81B254DE90053B455 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		29A5D5EA1B2550530053B455 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +86,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29A5D5DF1B254D4C0053B455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +102,7 @@
 			children = (
 				29A5D57B1B1D59720053B455 /* AssertFlow */,
 				29A5D5881B1D59720053B455 /* AssertFlowTests */,
+				29A5D5E71B254DCE0053B455 /* Examples */,
 				29A5D57A1B1D59720053B455 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +112,7 @@
 			children = (
 				29A5D5791B1D59720053B455 /* AssertFlow.framework */,
 				29A5D5841B1D59720053B455 /* AssertFlowTests.xctest */,
+				29A5D5E51B254D4C0053B455 /* AssertFlowExamples.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +177,15 @@
 			path = Matcher;
 			sourceTree = "<group>";
 		};
+		29A5D5E71B254DCE0053B455 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				29A5D5E81B254DE90053B455 /* DictionaryTests.swift */,
+				29A5D5EA1B2550530053B455 /* Info.plist */,
+			);
+			path = Examples;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -197,6 +235,24 @@
 			productReference = 29A5D5841B1D59720053B455 /* AssertFlowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		29A5D5D51B254D4C0053B455 /* Examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29A5D5E21B254D4C0053B455 /* Build configuration list for PBXNativeTarget "Examples" */;
+			buildPhases = (
+				29A5D5D81B254D4C0053B455 /* Sources */,
+				29A5D5DF1B254D4C0053B455 /* Frameworks */,
+				29A5D5E11B254D4C0053B455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29A5D5D61B254D4C0053B455 /* PBXTargetDependency */,
+			);
+			name = Examples;
+			productName = AssertFlowTests;
+			productReference = 29A5D5E51B254D4C0053B455 /* AssertFlowExamples.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,6 +276,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 29A5D56F1B1D59720053B455;
 			productRefGroup = 29A5D57A1B1D59720053B455 /* Products */;
@@ -228,6 +285,7 @@
 			targets = (
 				29A5D5781B1D59720053B455 /* AssertFlow */,
 				29A5D5831B1D59720053B455 /* AssertFlowTests */,
+				29A5D5D51B254D4C0053B455 /* Examples */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +302,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29A5D5E11B254D4C0053B455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A5D5EB1B2550530053B455 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +342,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29A5D5D81B254D4C0053B455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A5D5D91B254D4C0053B455 /* AssertFlowTests.swift in Sources */,
+				29A5D5DA1B254D4C0053B455 /* AbstractMatcherTest.swift in Sources */,
+				29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */,
+				29A5D5DB1B254D4C0053B455 /* StringMatcherTest.swift in Sources */,
+				29A5D5DC1B254D4C0053B455 /* IntegerTypeMatcherTest.swift in Sources */,
+				29A5D5DD1B254D4C0053B455 /* DictionaryMatcherTest.swift in Sources */,
+				29A5D5DE1B254D4C0053B455 /* SequenceTypeMatcherTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -283,6 +363,11 @@
 			isa = PBXTargetDependency;
 			target = 29A5D5781B1D59720053B455 /* AssertFlow */;
 			targetProxy = 29A5D5861B1D59720053B455 /* PBXContainerItemProxy */;
+		};
+		29A5D5D61B254D4C0053B455 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29A5D5781B1D59720053B455 /* AssertFlow */;
+			targetProxy = 29A5D5D71B254D4C0053B455 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,6 +539,38 @@
 			};
 			name = Release;
 		};
+		29A5D5E31B254D4C0053B455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Examples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = AssertFlowExamples;
+			};
+			name = Debug;
+		};
+		29A5D5E41B254D4C0053B455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Examples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = AssertFlowExamples;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,6 +597,15 @@
 			buildConfigurations = (
 				29A5D5931B1D59720053B455 /* Debug */,
 				29A5D5941B1D59720053B455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29A5D5E21B254D4C0053B455 /* Build configuration list for PBXNativeTarget "Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29A5D5E31B254D4C0053B455 /* Debug */,
+				29A5D5E41B254D4C0053B455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

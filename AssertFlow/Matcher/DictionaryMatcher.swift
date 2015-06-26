@@ -7,15 +7,16 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
         super.init(actual: actual)
     }
     
-    public func containsKey(expected: K) {
+    public func containsKey(expected: K) -> Self {
         if unpack () {
             if actual[expected] == nil {
                 fail("Expected dictionary to contain \(expected)")
             }
         }
+        return self
     }
     
-    public func containsKey<X: Equatable>(key: K, withValue: X) {
+    public func containsKey<X: Equatable>(key: K, withValue: X) -> Self{
         if unpack() {
             if let value = actual[key] {
                 if let castedValue = value as? X {
@@ -29,5 +30,6 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
                 fail("Expected dictionary to contain key \(key)")
             }
         }
+        return self
     }
 }

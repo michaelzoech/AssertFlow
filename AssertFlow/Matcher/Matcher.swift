@@ -13,13 +13,14 @@ public class Matcher<T> : MatcherType {
         self.matchInfo = actual
     }
     
-    public func isNil() {
+    public func isNil() -> Self {
         if let a = matchInfo.actual {
             fail("Expected nil, but was \(a)")
         }
+        return self
     }
     
-    public func equals<X: Equatable>(expected: X) {
+    public func equals<X: Equatable>(expected: X) -> Self {
         if unpack() {
             if let a = actual as? X {
                 if expected != a {
@@ -29,6 +30,7 @@ public class Matcher<T> : MatcherType {
                 fail("Expected \(actual) to equal \(expected)")
             }
         }
+        return self
     }
     
     public func unpack() -> Bool {

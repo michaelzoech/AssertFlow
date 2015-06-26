@@ -44,4 +44,13 @@ class CollectionTypeMatcherTest : XCTestCase {
         assertThat(a).containsOneOf("x", "y")
         XCTAssertTrue(handler.called)
     }
+    
+    func testChaining() {
+        let a = ["a", "b"]
+        
+        assertThat(a).contains("a").contains("b")
+        XCTAssertFalse(handler.called)
+        assertThat(a).contains("a").contains("c")
+        XCTAssertTrue(handler.called)
+    }
 }

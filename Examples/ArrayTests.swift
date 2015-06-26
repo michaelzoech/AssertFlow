@@ -17,6 +17,6 @@ class ArrayTests : XCTestCase {
         
         let a: Array<AnyObject> = ["a", "b"]
         
-        assertThat(a).contains("a")
+        //assertThat(a).contains("a")
     }
 }

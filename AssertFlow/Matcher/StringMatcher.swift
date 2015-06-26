@@ -8,11 +8,12 @@ public class StringMatcher : Matcher<String> {
         super.init(actual: actual)
     }
     
-    public func contains(expected: String) {
+    public func contains(expected: String) -> Self {
         if unpack() {
             if actual.rangeOfString(expected) == nil {
                 fail("Expected string \"\(actual)\" to contain \"\(expected)\"")
             }
         }
+        return self
     }
 }

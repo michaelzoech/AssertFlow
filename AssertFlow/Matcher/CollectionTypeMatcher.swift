@@ -5,18 +5,19 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
     
     typealias Item = Element.Generator.Element
     
-    public func contains(expected: Item) {
+    public func contains(expected: Item) -> Self {
         if unpack() {
             for e in actual {
                     if expected == e {
-                        return
+                        return self
                     }
             }
             fail("Expected \(Element.self) to contain \(expected)")
         }
+        return self
     }
     
-    public func containsInOrder(expected: Item...) {
+    public func containsInOrder(expected: Item...) -> Self {
         if unpack() {
             var g = expected.generate()
             var next = g.next()
@@ -24,25 +25,27 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
                     if next == e {
                         next = g.next()
                         if next == nil {
-                            return
+                            return self
                         }
                     }
             }
             fail("Expected sequence to contain in order \(expected)")
         }
+        return self
     }
     
-    public func containsOneOf(expected: Item...) {
+    public func containsOneOf(expected: Item...) -> Self {
         if unpack() {
             for e in expected {
                 for a in actual {
                         if (a == e) {
-                            return
+                            return self
                         }
                 }
             }
             fail("Expected sequence to contain one of \(expected)")
         }
+        return self
     }
 
 }

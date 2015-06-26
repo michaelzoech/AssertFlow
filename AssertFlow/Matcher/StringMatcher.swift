@@ -1,9 +1,10 @@
 
 import Foundation
 
-public class StringMatcher<S> : AbstractMatcher<String> {
+
+public class StringMatcher : Matcher<String> {
     
-    override public init(actual: MatchInfo<String>) {
+    public override init(actual: MatchInfo<Element>) {
         super.init(actual: actual)
     }
     

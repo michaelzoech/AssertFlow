@@ -3,6 +3,7 @@ import Foundation
 import XCTest
 import AssertFlow
 
+
 class StringMatcherTest : XCTestCase {
     
     var handler: CaptureAssertHandler = CaptureAssertHandler()
@@ -13,7 +14,7 @@ class StringMatcherTest : XCTestCase {
     }
     
     func testContainsSubstring() {
-        var s = "This is a longer string for testing"
+        let s = "This is a longer string for testing"
         
         assertThat(s).contains("a longer")
         XCTAssertFalse(handler.called)

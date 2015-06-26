@@ -1,13 +1,9 @@
 
 import Foundation
 
-public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
+public extension MatcherType where Element: Comparable {
     
-    override public init(actual: MatchInfo<T>) {
-        super.init(actual: actual)
-    }
-    
-    public func greaterThan(expected: T) {
+    public func greaterThan(expected: Element) {
         if unpack() {
             if actual <= expected {
                 fail("Expected \(actual) to be greater than \(expected)")
@@ -15,7 +11,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
         }
     }
     
-    public func greaterOrEqual(expected: T) {
+    public func greaterOrEqual(expected: Element) {
         if unpack() {
             if actual < expected {
                 fail("Expected \(actual) to be greater or equal than \(expected)")
@@ -23,7 +19,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
         }
     }
     
-    public func smallerThan(expected: T) {
+    public func smallerThan(expected: Element) {
         if unpack() {
             if actual >= expected {
                 fail("Expected \(actual) to be smaller than \(expected)")
@@ -31,7 +27,7 @@ public class IntegerTypeMatcher<T: IntegerType> : AbstractMatcher<T> {
         }
     }
     
-    public func smallerOrEqual(expected: T) {
+    public func smallerOrEqual(expected: Element) {
         if unpack() {
             if actual > expected {
                 fail("Expected \(actual) to be smaller or equal than \(expected)")

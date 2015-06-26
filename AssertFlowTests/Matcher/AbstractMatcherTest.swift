@@ -22,7 +22,7 @@ class AbstractMatcherTest : XCTestCase {
     }
     
     func testEquals() {
-        var a = "a"
+        let a = "a"
         
         assertThat(a).equals("a")
         XCTAssertFalse(handler.called)
@@ -31,7 +31,7 @@ class AbstractMatcherTest : XCTestCase {
     }
     
     func testEqualsWithNil() {
-        var a: String? = nil
+        let a: String? = nil
         XCTAssertFalse(handler.called)
         assertThat(a).equals("b")
         XCTAssertTrue(handler.called)

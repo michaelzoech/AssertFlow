@@ -1,12 +1,15 @@
 
 import Foundation
 
-public class AbstractMatcher<T> {
+public class Matcher<T> : MatcherType {
     
-    let matchInfo: MatchInfo<T>
-    var actual: T { get { return matchInfo.actual! } }
+    typealias Element = T
     
-    public init(actual: MatchInfo<T>) {
+    let matchInfo: MatchInfo<Element>
+    
+    public var actual: Element { get { return matchInfo.actual! } }
+    
+    public init(actual: MatchInfo<Element>) {
         self.matchInfo = actual
     }
     
@@ -28,7 +31,7 @@ public class AbstractMatcher<T> {
         }
     }
     
-    func unpack() -> Bool {
+    public func unpack() -> Bool {
         if matchInfo.actual == nil {
             fail("MatchInfo for assertion is nil")
             return false
@@ -37,7 +40,7 @@ public class AbstractMatcher<T> {
         }
     }
     
-    func fail(message: String) {
+    public func fail(message: String) {
         AssertHandler.instance.fail(self, message: message)
     }
 }

@@ -1,16 +1,16 @@
 
 import Foundation
 
-public class DictionaryMatcher<K: Hashable, V> : AbstractMatcher<Dictionary<K,V>> {
-    
-    override public init(actual: MatchInfo<Dictionary<K,V>>) {
+public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
+
+    public override init(actual: MatchInfo<Element>) {
         super.init(actual: actual)
     }
     
     public func containsKey(expected: K) {
         if unpack () {
             if actual[expected] == nil {
-                fail("Expected dictionary to contain key \(expected)")
+                fail("Expected dictionary to contain \(expected)")
             }
         }
     }

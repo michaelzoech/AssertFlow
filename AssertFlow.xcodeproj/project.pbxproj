@@ -14,7 +14,7 @@
 		29A5D58C1B1D59720053B455 /* AssertFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D58B1B1D59720053B455 /* AssertFlowTests.swift */; };
 		29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5951B1D598A0053B455 /* AssertFlow.swift */; };
 		29A5D59A1B1D5A750053B455 /* MatcherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5991B1D5A750053B455 /* MatcherType.swift */; };
-		29A5D59C1B1D5B4D0053B455 /* IntegerTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59B1B1D5B4D0053B455 /* IntegerTypeMatcher.swift */; };
+		29A5D59C1B1D5B4D0053B455 /* ComparableMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59B1B1D5B4D0053B455 /* ComparableMatcher.swift */; };
 		29A5D59F1B1D844D0053B455 /* ComparableMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59E1B1D844D0053B455 /* ComparableMatcherTest.swift */; };
 		29A5D5A11B1D903F0053B455 /* DictionaryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */; };
 		29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
@@ -60,7 +60,7 @@
 		29A5D58B1B1D59720053B455 /* AssertFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertFlowTests.swift; sourceTree = "<group>"; };
 		29A5D5951B1D598A0053B455 /* AssertFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssertFlow.swift; sourceTree = "<group>"; };
 		29A5D5991B1D5A750053B455 /* MatcherType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherType.swift; sourceTree = "<group>"; };
-		29A5D59B1B1D5B4D0053B455 /* IntegerTypeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerTypeMatcher.swift; sourceTree = "<group>"; };
+		29A5D59B1B1D5B4D0053B455 /* ComparableMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableMatcher.swift; sourceTree = "<group>"; };
 		29A5D59E1B1D844D0053B455 /* ComparableMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableMatcherTest.swift; sourceTree = "<group>"; };
 		29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcher.swift; sourceTree = "<group>"; };
 		29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcherTest.swift; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 				29246F291B2FD05E008A5C51 /* Matcher.swift */,
 				29A5D5991B1D5A750053B455 /* MatcherType.swift */,
 				29246EEC1B268C43008A5C51 /* CollectionTypeMatcher.swift */,
+				29A5D59B1B1D5B4D0053B455 /* ComparableMatcher.swift */,
 				29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */,
-				29A5D59B1B1D5B4D0053B455 /* IntegerTypeMatcher.swift */,
 				29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */,
 			);
 			path = Matcher;
@@ -335,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A5D5A11B1D903F0053B455 /* DictionaryMatcher.swift in Sources */,
-				29A5D59C1B1D5B4D0053B455 /* IntegerTypeMatcher.swift in Sources */,
+				29A5D59C1B1D5B4D0053B455 /* ComparableMatcher.swift in Sources */,
 				29A5D59A1B1D5A750053B455 /* MatcherType.swift in Sources */,
 				29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */,
 				29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */,

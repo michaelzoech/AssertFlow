@@ -27,7 +27,6 @@
 		29A5D5DB1B254D4C0053B455 /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */; };
 		29A5D5DC1B254D4C0053B455 /* ComparableMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D59E1B1D844D0053B455 /* ComparableMatcherTest.swift */; };
 		29A5D5DD1B254D4C0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
-		29A5D5DE1B254D4C0053B455 /* CollectionTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5B01B1EE5160053B455 /* CollectionTypeMatcherTest.swift */; };
 		29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5E81B254DE90053B455 /* DictionaryTests.swift */; };
 		29A5D5EB1B2550530053B455 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29A5D5EA1B2550530053B455 /* Info.plist */; };
@@ -369,7 +368,6 @@
 				29A5D5DC1B254D4C0053B455 /* ComparableMatcherTest.swift in Sources */,
 				29246EEF1B26C3C7008A5C51 /* ArrayTests.swift in Sources */,
 				29A5D5DD1B254D4C0053B455 /* DictionaryMatcherTest.swift in Sources */,
-				29A5D5DE1B254D4C0053B455 /* CollectionTypeMatcherTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

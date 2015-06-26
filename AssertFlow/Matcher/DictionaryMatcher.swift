@@ -10,7 +10,7 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
     public func containsKey(expected: K) -> Self {
         if unpack () {
             if actual[expected] == nil {
-                fail("Expected dictionary to contain \(expected)")
+                fail("Expected dictionary to contain key:", expected: expected, actualMsg: "But key not found in:", actual: actual)
             }
         }
         return self

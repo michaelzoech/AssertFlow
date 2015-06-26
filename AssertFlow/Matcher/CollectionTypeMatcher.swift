@@ -12,7 +12,7 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
                         return self
                     }
             }
-            fail("Expected \(Element.self) to contain \(expected)")
+            fail("Expected \(Element.self) to contain:", expected: expected, actualMsg: "But was: ", actual: actual)
         }
         return self
     }

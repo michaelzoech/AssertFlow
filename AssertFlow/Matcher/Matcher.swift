@@ -45,4 +45,21 @@ public class Matcher<T> : MatcherType {
     public func fail(message: String) {
         AssertHandler.instance.fail(self, message: message)
     }
+    
+    public func fail<A, B>(expectedMsg: String, expected: A, actualMsg: String, actual: B) {
+        fail(expectedMsg + wrapIfMultiline("\(expected)") + actualMsg + wrapIfMultiline("\(actual)"))
+    }
+    
+    private func wrapIfMultiline(s: String) -> String {
+        let splitted = split(s.characters) { $0 == "\n" }.map { String($0) }
+        if splitted.count > 1 {
+            var result = "\n"
+            for e in splitted {
+                result += "\t" + e + "\n"
+            }
+            return result
+        } else {
+            return " \(s). "
+        }
+    }
 }

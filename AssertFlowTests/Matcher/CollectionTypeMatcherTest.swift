@@ -53,4 +53,14 @@ class CollectionTypeMatcherTest : XCTestCase {
         assertThat(a).contains("a").contains("c")
         XCTAssertTrue(handler.called)
     }
+    
+    func testSet() {
+        var a = Set<String>()
+        a.insert("a")
+        
+        assertThat(a).contains("a")
+        XCTAssertFalse(handler.called)
+        assertThat(a).contains("uknown")
+        XCTAssertTrue(handler.called)
+    }
 }

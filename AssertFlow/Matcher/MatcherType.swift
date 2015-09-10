@@ -6,6 +6,8 @@ public protocol MatcherType : class {
     typealias Element
     
     var actual: Element { get }
+
+    var actualOrNil: Element? { get }
     
     func unpack() -> Bool
     

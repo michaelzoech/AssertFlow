@@ -3,7 +3,6 @@ import Foundation
 import XCTest
 import AssertFlow
 
-
 class IntegerTypeMatcherTest : XCTestCase {
     
     var handler: CaptureAssertHandler = CaptureAssertHandler()

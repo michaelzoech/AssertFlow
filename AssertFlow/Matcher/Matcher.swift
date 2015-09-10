@@ -3,11 +3,13 @@ import Foundation
 
 public class Matcher<T> : MatcherType {
     
-    typealias Element = T
+    public typealias Element = T
     
     let matchInfo: MatchInfo<Element>
     
     public var actual: Element { get { return matchInfo.actual! } }
+
+    public var actualOrNil: Element? { get { return matchInfo.actual } }
     
     public init(actual: MatchInfo<Element>) {
         self.matchInfo = actual
@@ -16,19 +18,6 @@ public class Matcher<T> : MatcherType {
     public func isNil() -> Self {
         if let a = matchInfo.actual {
             fail("Expected nil, but was \(a)")
-        }
-        return self
-    }
-    
-    public func equals<X: Equatable>(expected: X) -> Self {
-        if unpack() {
-            if let a = actual as? X {
-                if expected != a {
-                    fail("Expected \(a) to equal \(expected)")
-                }
-            } else {
-                fail("Expected \(actual) to equal \(expected)")
-            }
         }
         return self
     }
@@ -51,7 +40,7 @@ public class Matcher<T> : MatcherType {
     }
     
     private func wrapIfMultiline(s: String) -> String {
-        let splitted = split(s.characters) { $0 == "\n" }.map { String($0) }
+        let splitted = s.characters.split() { $0 == "\n" }.map { String($0) }
         if splitted.count > 1 {
             var result = "\n"
             for e in splitted {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291F6AF41BA1380100437982 /* EquatableMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F6AF31BA1380100437982 /* EquatableMatcher.swift */; settings = {ASSET_TAGS = (); }; };
+		291F6AF61BA1382000437982 /* EquatableMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F6AF51BA1382000437982 /* EquatableMatcherTest.swift */; settings = {ASSET_TAGS = (); }; };
 		29246EED1B268C43008A5C51 /* CollectionTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29246EEC1B268C43008A5C51 /* CollectionTypeMatcher.swift */; };
 		29246EEF1B26C3C7008A5C51 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29246EEE1B26C3C7008A5C51 /* ArrayTests.swift */; };
 		29246F2A1B2FD05E008A5C51 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29246F291B2FD05E008A5C51 /* Matcher.swift */; };
@@ -31,7 +33,6 @@
 		29A5D5DD1B254D4C0053B455 /* DictionaryMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */; };
 		29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5E81B254DE90053B455 /* DictionaryTests.swift */; };
-		29A5D5EB1B2550530053B455 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29A5D5EA1B2550530053B455 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		291F6AF31BA1380100437982 /* EquatableMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableMatcher.swift; sourceTree = "<group>"; };
+		291F6AF51BA1382000437982 /* EquatableMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableMatcherTest.swift; sourceTree = "<group>"; };
 		29246EEC1B268C43008A5C51 /* CollectionTypeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeMatcher.swift; sourceTree = "<group>"; };
 		29246EEE1B26C3C7008A5C51 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		29246F291B2FD05E008A5C51 /* Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
@@ -176,8 +179,9 @@
 				29246EEC1B268C43008A5C51 /* CollectionTypeMatcher.swift */,
 				29A5D59B1B1D5B4D0053B455 /* ComparableMatcher.swift */,
 				29A5D5A01B1D903F0053B455 /* DictionaryMatcher.swift */,
-				29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */,
+				291F6AF31BA1380100437982 /* EquatableMatcher.swift */,
 				295AAC661B5C7158007329DA /* FloatingPointTypeMatcher.swift */,
+				29A5D5A41B1ED23D0053B455 /* StringMatcher.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -189,8 +193,9 @@
 				29A5D5B01B1EE5160053B455 /* CollectionTypeMatcherTest.swift */,
 				29A5D59E1B1D844D0053B455 /* ComparableMatcherTest.swift */,
 				29A5D5A21B1D904D0053B455 /* DictionaryMatcherTest.swift */,
-				29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */,
+				291F6AF51BA1382000437982 /* EquatableMatcherTest.swift */,
 				295AAC681B5C716B007329DA /* FloatingPointTypeMatcherTest.swift */,
+				29A5D5A61B1ED2470053B455 /* StringMatcherTest.swift */,
 			);
 			path = Matcher;
 			sourceTree = "<group>";
@@ -279,7 +284,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Michael Zoech";
 				TargetAttributes = {
 					29A5D5781B1D59720053B455 = {
@@ -329,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A5D5EB1B2550530053B455 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +350,7 @@
 				29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */,
 				29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */,
 				295AAC671B5C7158007329DA /* FloatingPointTypeMatcher.swift in Sources */,
+				291F6AF41BA1380100437982 /* EquatableMatcher.swift in Sources */,
 				29246F2A1B2FD05E008A5C51 /* Matcher.swift in Sources */,
 				29246EED1B268C43008A5C51 /* CollectionTypeMatcher.swift in Sources */,
 			);
@@ -360,6 +365,7 @@
 				29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */,
 				29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */,
 				29A5D59F1B1D844D0053B455 /* ComparableMatcherTest.swift in Sources */,
+				291F6AF61BA1382000437982 /* EquatableMatcherTest.swift in Sources */,
 				29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */,
 				29A5D5B11B1EE5160053B455 /* CollectionTypeMatcherTest.swift in Sources */,
 			);
@@ -416,6 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -498,6 +505,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -524,6 +532,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -544,6 +553,7 @@
 				);
 				INFOPLIST_FILE = AssertFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -558,6 +568,7 @@
 				);
 				INFOPLIST_FILE = AssertFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -576,6 +587,7 @@
 				);
 				INFOPLIST_FILE = Examples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AssertFlowExamples;
 			};
 			name = Debug;
@@ -590,6 +602,7 @@
 				);
 				INFOPLIST_FILE = Examples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.bitbrothers.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AssertFlowExamples;
 			};
 			name = Release;

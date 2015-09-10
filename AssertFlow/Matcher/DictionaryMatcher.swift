@@ -16,15 +16,15 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
         return self
     }
     
-    public func containsKey<X: Equatable>(key: K, withValue: X) -> Self{
+    public func containsKey<X: Equatable>(key: K, value: X) -> Self{
         if unpack() {
-            if let value = actual[key] {
-                if let castedValue = value as? X {
-                    if castedValue != withValue {
-                        fail("Expected dictionary to contain key \(key) with value \(withValue)")
+            if let actualValue = actual[key] {
+                if let castedValue = actualValue as? X {
+                    if castedValue != value {
+                        fail("Expected dictionary to contain key \(key) with value \(value)")
                     }
                 } else {
-                    fail("Expected dictionary to contain key \(key) with value \(withValue)")
+                    fail("Expected dictionary to contain key \(key) with value \(value)")
                 }
             } else {
                 fail("Expected dictionary to contain key \(key)")

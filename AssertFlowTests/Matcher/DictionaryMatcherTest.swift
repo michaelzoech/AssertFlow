@@ -26,9 +26,9 @@ class DictionaryMatcherTest : XCTestCase {
         var dict: [String:Int] = [:]
         dict["a"] = 1
         
-        assertThat(dict).containsKey("a", withValue: 1)
+        assertThat(dict).containsKey("a", value: 1)
         XCTAssertFalse(handler.called)
-        assertThat(dict).containsKey("a", withValue: 2)
+        assertThat(dict).containsKey("a", value: 2)
         XCTAssertTrue(handler.called)
     }
     
@@ -36,7 +36,7 @@ class DictionaryMatcherTest : XCTestCase {
         var dict: [String:Int] = [:]
         dict["a"] = 1
         
-        assertThat(dict).containsKey("b", withValue: 1)
+        assertThat(dict).containsKey("b", value: 1)
         XCTAssertTrue(handler.called)
     }
 }

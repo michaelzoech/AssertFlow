@@ -63,4 +63,18 @@ class CollectionTypeMatcherTest : XCTestCase {
         assertThat(a).contains("uknown")
         XCTAssertTrue(handler.called)
     }
+
+    func testIsEmpty() {
+        assertThat([String]()).isEmpty()
+        XCTAssertFalse(handler.called)
+        assertThat(["a"]).isEmpty()
+        XCTAssertTrue(handler.called)
+    }
+
+    func testHasCount() {
+        assertThat([String]()).hasCount(0)
+        XCTAssertFalse(handler.called)
+        assertThat(["a"]).hasCount(0)
+        XCTAssertTrue(handler.called)
+    }
 }

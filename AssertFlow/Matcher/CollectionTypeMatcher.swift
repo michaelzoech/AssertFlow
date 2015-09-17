@@ -48,4 +48,22 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
         return self
     }
 
+    public func isEmpty() -> Self {
+        if unpack() {
+            if !actual.isEmpty {
+                fail("Expected collection to be empty")
+            }
+        }
+        return self
+    }
+
+    public func hasCount(expected: Element.Index.Distance) -> Self {
+        if unpack() {
+            let count = actual.count
+            if count != expected {
+                fail("Expected collection count to be \(expected), but was \(count)")
+            }
+        }
+        return self
+    }
 }

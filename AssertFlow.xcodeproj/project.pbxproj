@@ -14,6 +14,10 @@
 		29246F2A1B2FD05E008A5C51 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29246F291B2FD05E008A5C51 /* Matcher.swift */; };
 		295AAC671B5C7158007329DA /* FloatingPointTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AAC661B5C7158007329DA /* FloatingPointTypeMatcher.swift */; };
 		295AAC691B5C716B007329DA /* FloatingPointTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295AAC681B5C716B007329DA /* FloatingPointTypeMatcherTest.swift */; };
+		29977BB61BC513D900A1DB9B /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BB51BC513D900A1DB9B /* Capture.swift */; settings = {ASSET_TAGS = (); }; };
+		29977BB81BC5140A00A1DB9B /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BB71BC5140A00A1DB9B /* Expectation.swift */; settings = {ASSET_TAGS = (); }; };
+		29977BBB1BC515A800A1DB9B /* CaptureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BBA1BC515A800A1DB9B /* CaptureTest.swift */; settings = {ASSET_TAGS = (); }; };
+		29977BBD1BC515B100A1DB9B /* ExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BBC1BC515B100A1DB9B /* ExpectationTest.swift */; settings = {ASSET_TAGS = (); }; };
 		29A5D5851B1D59720053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D58C1B1D59720053B455 /* AssertFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D58B1B1D59720053B455 /* AssertFlowTests.swift */; };
 		29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5951B1D598A0053B455 /* AssertFlow.swift */; };
@@ -60,6 +64,10 @@
 		29246F291B2FD05E008A5C51 /* Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
 		295AAC661B5C7158007329DA /* FloatingPointTypeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointTypeMatcher.swift; sourceTree = "<group>"; };
 		295AAC681B5C716B007329DA /* FloatingPointTypeMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointTypeMatcherTest.swift; sourceTree = "<group>"; };
+		29977BB51BC513D900A1DB9B /* Capture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
+		29977BB71BC5140A00A1DB9B /* Expectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
+		29977BBA1BC515A800A1DB9B /* CaptureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureTest.swift; sourceTree = "<group>"; };
+		29977BBC1BC515B100A1DB9B /* ExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectationTest.swift; sourceTree = "<group>"; };
 		29A5D5791B1D59720053B455 /* AssertFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssertFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A5D57D1B1D59720053B455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A5D5841B1D59720053B455 /* AssertFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +123,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		29977BB41BC513CD00A1DB9B /* Concurrent */ = {
+			isa = PBXGroup;
+			children = (
+				29977BB51BC513D900A1DB9B /* Capture.swift */,
+				29977BB71BC5140A00A1DB9B /* Expectation.swift */,
+			);
+			path = Concurrent;
+			sourceTree = "<group>";
+		};
+		29977BB91BC5159D00A1DB9B /* Concurrent */ = {
+			isa = PBXGroup;
+			children = (
+				29977BBA1BC515A800A1DB9B /* CaptureTest.swift */,
+				29977BBC1BC515B100A1DB9B /* ExpectationTest.swift */,
+			);
+			path = Concurrent;
+			sourceTree = "<group>";
+		};
 		29A5D56F1B1D59720053B455 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +164,7 @@
 		29A5D57B1B1D59720053B455 /* AssertFlow */ = {
 			isa = PBXGroup;
 			children = (
+				29977BB41BC513CD00A1DB9B /* Concurrent */,
 				29A5D5971B1D5A5D0053B455 /* Matcher */,
 				29A5D57C1B1D59720053B455 /* Supporting Files */,
 				29A5D5951B1D598A0053B455 /* AssertFlow.swift */,
@@ -156,6 +183,7 @@
 		29A5D5881B1D59720053B455 /* AssertFlowTests */ = {
 			isa = PBXGroup;
 			children = (
+				29977BB91BC5159D00A1DB9B /* Concurrent */,
 				29A5D59D1B1D842D0053B455 /* Matcher */,
 				29A5D5891B1D59720053B455 /* Supporting Files */,
 				29A5D58B1B1D59720053B455 /* AssertFlowTests.swift */,
@@ -347,11 +375,13 @@
 				29A5D5A11B1D903F0053B455 /* DictionaryMatcher.swift in Sources */,
 				29A5D59C1B1D5B4D0053B455 /* ComparableMatcher.swift in Sources */,
 				29A5D59A1B1D5A750053B455 /* MatcherType.swift in Sources */,
+				29977BB81BC5140A00A1DB9B /* Expectation.swift in Sources */,
 				29A5D5961B1D598A0053B455 /* AssertFlow.swift in Sources */,
 				29A5D5A51B1ED23D0053B455 /* StringMatcher.swift in Sources */,
 				295AAC671B5C7158007329DA /* FloatingPointTypeMatcher.swift in Sources */,
 				291F6AF41BA1380100437982 /* EquatableMatcher.swift in Sources */,
 				29246F2A1B2FD05E008A5C51 /* Matcher.swift in Sources */,
+				29977BB61BC513D900A1DB9B /* Capture.swift in Sources */,
 				29246EED1B268C43008A5C51 /* CollectionTypeMatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +395,8 @@
 				29A5D5AD1B1EE2B00053B455 /* AbstractMatcherTest.swift in Sources */,
 				29A5D5A71B1ED2470053B455 /* StringMatcherTest.swift in Sources */,
 				29A5D59F1B1D844D0053B455 /* ComparableMatcherTest.swift in Sources */,
+				29977BBB1BC515A800A1DB9B /* CaptureTest.swift in Sources */,
+				29977BBD1BC515B100A1DB9B /* ExpectationTest.swift in Sources */,
 				291F6AF61BA1382000437982 /* EquatableMatcherTest.swift in Sources */,
 				29A5D5A31B1D904D0053B455 /* DictionaryMatcherTest.swift in Sources */,
 				29A5D5B11B1EE5160053B455 /* CollectionTypeMatcherTest.swift in Sources */,

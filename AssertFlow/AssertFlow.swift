@@ -8,16 +8,20 @@ public class AssertHandler {
     
     public init() {
     }
-    
+
     public func fail<T>(matcher: Matcher<T>, message: String) {
+        fail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
     }
-    
+
+    public func fail(message: String, file: String, line: UInt) {
+    }
+
 }
 
 public class XCTestAssertHandler : AssertHandler {
     
-    override public func fail<T>(matcher: Matcher<T>, message: String) {
-        XCTFail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
+    override public func fail(message: String, file: String, line: UInt) {
+        XCTFail(message, file: file, line: line)
     }
 }
 

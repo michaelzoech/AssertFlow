@@ -11,7 +11,7 @@ class CaptureAssertHandler : AssertHandler {
         super.init()
     }
     
-    override func fail<T>(matcher: Matcher<T>, message: String) {
+    override func fail(message: String, file: String, line: UInt) {
         self.called = true
     }
 }

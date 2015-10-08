@@ -13,11 +13,11 @@ class DictionaryTests : XCTestCase {
     }
     
     func testContainsKeyWithValue_noKey() {
-        assertThat(dict).containsKey("b", withValue: 2)
-        assertThat(dict).containsKey("unknown", withValue: 0)
+        assertThat(dict).containsKey("b", value: 2)
+        assertThat(dict).containsKey("unknown", value: 0)
     }
     
     func testContainsKeyWithValue_wrongValue() {
-        assertThat(dict).containsKey("a", withValue: 0)
+        assertThat(dict).containsKey("a", value: 0)
     }
 }

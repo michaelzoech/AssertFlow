@@ -18,7 +18,6 @@
 		29977BEF1BC636D500A1DB9B /* FloatingPointTypeMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BE81BC636D500A1DB9B /* FloatingPointTypeMatcherTest.swift */; settings = {ASSET_TAGS = (); }; };
 		29977BF01BC636D500A1DB9B /* StringMatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BE91BC636D500A1DB9B /* StringMatcherTest.swift */; settings = {ASSET_TAGS = (); }; };
 		29977BF51BC636E600A1DB9B /* AssertFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BDB1BC636C300A1DB9B /* AssertFlow.swift */; settings = {ASSET_TAGS = (); }; };
-		29977BF61BC636E900A1DB9B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29977BDC1BC636C300A1DB9B /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		29977BF71BC636EE00A1DB9B /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BC71BC636B100A1DB9B /* Capture.swift */; settings = {ASSET_TAGS = (); }; };
 		29977BF81BC636EE00A1DB9B /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BC81BC636B100A1DB9B /* Expectation.swift */; settings = {ASSET_TAGS = (); }; };
 		29977BF91BC636F400A1DB9B /* CollectionTypeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BCB1BC636B900A1DB9B /* CollectionTypeMatcher.swift */; settings = {ASSET_TAGS = (); }; };
@@ -30,7 +29,6 @@
 		29977BFF1BC636F400A1DB9B /* MatcherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BD11BC636B900A1DB9B /* MatcherType.swift */; settings = {ASSET_TAGS = (); }; };
 		29977C001BC636F400A1DB9B /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BD21BC636B900A1DB9B /* StringMatcher.swift */; settings = {ASSET_TAGS = (); }; };
 		29977C011BC636FC00A1DB9B /* AssertFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */; settings = {ASSET_TAGS = (); }; };
-		29977C021BC636FC00A1DB9B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29977BF21BC636DE00A1DB9B /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		29A5D5851B1D59720053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5E81B254DE90053B455 /* DictionaryTests.swift */; };
@@ -123,11 +121,11 @@
 		29977BBF1BC635BB00A1DB9B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				29977BDB1BC636C300A1DB9B /* AssertFlow.swift */,
-				29977BDC1BC636C300A1DB9B /* Info.plist */,
 				29977BC21BC6360F00A1DB9B /* Concurrent */,
 				29977BC61BC6366000A1DB9B /* Internal */,
 				29977BC31BC6360F00A1DB9B /* Matcher */,
+				29977BDB1BC636C300A1DB9B /* AssertFlow.swift */,
+				29977BDC1BC636C300A1DB9B /* Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -135,10 +133,10 @@
 		29977BC01BC635BB00A1DB9B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */,
-				29977BF21BC636DE00A1DB9B /* Info.plist */,
 				29977BC41BC6362400A1DB9B /* Concurrent */,
 				29977BC51BC6362400A1DB9B /* Matcher */,
+				29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */,
+				29977BF21BC636DE00A1DB9B /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -338,7 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29977BF61BC636E900A1DB9B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +343,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29977C021BC636FC00A1DB9B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,33 +4,26 @@ import XCTest
 import AssertFlow
 
 
-class StringMatcherTest : XCTestCase {
-    
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-    
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class StringMatcherTest : AssertFlowTestCase {
     
     func testContainsSubstring() {
         let s = "This is a longer string for testing"
         
         assertThat(s).contains("a longer")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(s).contains("unknown")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
     
     func testContainsSubstringWithOptional() {
         var s: String? = "Hello"
         
         assertThat(s).contains("ll")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         
         s = nil
         
         assertThat(s).contains("ll")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 }

@@ -3,26 +3,19 @@ import Foundation
 import XCTest
 import AssertFlow
 
-class ExpectationTest: XCTestCase {
-
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class ExpectationTest: AssertFlowTestCase {
 
     func testFulfillBeforeAwait_shouldSucceed() {
         let expectation = Expectation()
         expectation.fulfill()
         expectation.await(0.1)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
     }
 
     func testNotFulfilledBeforeAwaitEnds_shouldNotSucceeds() {
         let expectation = Expectation()
         expectation.await(0.1)
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testCountedFulfilled_shouldFulfillAfterCount() {
@@ -36,6 +29,6 @@ class ExpectationTest: XCTestCase {
         })
 
         expectation.await(1)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
     }
 }

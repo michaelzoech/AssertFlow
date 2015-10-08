@@ -29,6 +29,7 @@
 		29977BFF1BC636F400A1DB9B /* MatcherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BD11BC636B900A1DB9B /* MatcherType.swift */; settings = {ASSET_TAGS = (); }; };
 		29977C001BC636F400A1DB9B /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BD21BC636B900A1DB9B /* StringMatcher.swift */; settings = {ASSET_TAGS = (); }; };
 		29977C011BC636FC00A1DB9B /* AssertFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */; settings = {ASSET_TAGS = (); }; };
+		29977C051BC63AC400A1DB9B /* AssertFlowTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29977C041BC63AC400A1DB9B /* AssertFlowTestCase.swift */; settings = {ASSET_TAGS = (); }; };
 		29A5D5851B1D59720053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E01B254D4C0053B455 /* AssertFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A5D5791B1D59720053B455 /* AssertFlow.framework */; };
 		29A5D5E91B254DE90053B455 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5D5E81B254DE90053B455 /* DictionaryTests.swift */; };
@@ -76,6 +77,7 @@
 		29977BE91BC636D500A1DB9B /* StringMatcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTest.swift; sourceTree = "<group>"; };
 		29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssertFlowTests.swift; sourceTree = "<group>"; };
 		29977BF21BC636DE00A1DB9B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29977C041BC63AC400A1DB9B /* AssertFlowTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssertFlowTestCase.swift; sourceTree = "<group>"; };
 		29A5D5791B1D59720053B455 /* AssertFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssertFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A5D5841B1D59720053B455 /* AssertFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A5D5E51B254D4C0053B455 /* AssertFlowExamples.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertFlowExamples.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				29977BC41BC6362400A1DB9B /* Concurrent */,
+				29977C031BC63AA700A1DB9B /* Helpers */,
 				29977BC51BC6362400A1DB9B /* Matcher */,
 				29977BF11BC636DE00A1DB9B /* AssertFlowTests.swift */,
 				29977BF21BC636DE00A1DB9B /* Info.plist */,
@@ -195,6 +198,14 @@
 			name = Internal;
 			path = Sources/Internal;
 			sourceTree = SOURCE_ROOT;
+		};
+		29977C031BC63AA700A1DB9B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29977C041BC63AC400A1DB9B /* AssertFlowTestCase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
 		};
 		29A5D56F1B1D59720053B455 = {
 			isa = PBXGroup;
@@ -384,6 +395,7 @@
 				29977C011BC636FC00A1DB9B /* AssertFlowTests.swift in Sources */,
 				29977BED1BC636D500A1DB9B /* DictionaryMatcherTest.swift in Sources */,
 				29977BEB1BC636D500A1DB9B /* CollectionTypeMatcherTest.swift in Sources */,
+				29977C051BC63AC400A1DB9B /* AssertFlowTestCase.swift in Sources */,
 				29977BF01BC636D500A1DB9B /* StringMatcherTest.swift in Sources */,
 				29977BE11BC636CE00A1DB9B /* CaptureTest.swift in Sources */,
 				29977BE21BC636CE00A1DB9B /* ExpectationTest.swift in Sources */,

@@ -4,19 +4,12 @@ import Foundation
 import XCTest
 import AssertFlow
 
-class FloatingPointTypeMatcherTest: XCTestCase {
-    
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-    
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class FloatingPointTypeMatcherTest: AssertFlowTestCase {
     
     func testIsNan() {
         assertThat(Float.NaN).isNaN()
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(2.3).isNaN()
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 }

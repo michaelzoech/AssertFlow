@@ -3,14 +3,7 @@ import Foundation
 import XCTest
 import AssertFlow
 
-class CaptureTest: XCTestCase {
-
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class CaptureTest: AssertFlowTestCase {
 
     func testCallCaptureFunctionOnBackgroundThread_shouldUnblockAndMatchPassedValue() {
         var function: (String -> ())?
@@ -23,15 +16,15 @@ class CaptureTest: XCTestCase {
         })
 
         myCapture.await(1)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
 
         assertThat(myCapture.p0).contains("bar")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
     }
 
     func testCaptureNotCalled_shouldFailAwait() {
         let myCapture = Capture1<String>()
         myCapture.await(0.1)
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 }

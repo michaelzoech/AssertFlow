@@ -3,42 +3,35 @@ import Foundation
 import XCTest
 import AssertFlow
 
-class EquatableMatcherTest: XCTestCase {
-
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class EquatableMatcherTest: AssertFlowTestCase {
 
     func testEqualsOfInt() {
         assertThat(2).equals(2)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(3).equals(2)
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testEqualsOfString() {
         let a = "a"
 
         assertThat(a).equals("a")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).equals("b")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testEqualsWithNil() {
         let a: String? = nil
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).equals("b")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testEqualsBothSidesNil() {
         let a: String? = nil
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).equals(nil)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
     }
 }

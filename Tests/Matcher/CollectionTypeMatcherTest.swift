@@ -3,55 +3,48 @@ import Foundation
 import XCTest
 import AssertFlow
 
-class CollectionTypeMatcherTest : XCTestCase {
-    
-    var handler: CaptureAssertHandler = CaptureAssertHandler()
-    
-    override func setUp() {
-        handler = CaptureAssertHandler()
-        AssertHandler.instance = handler
-    }
+class CollectionTypeMatcherTest : AssertFlowTestCase {
     
     func testContains() {
         let a = ["a", "b", "c", "d"]
         
         assertThat(a).contains("a")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         //assertThat(a).contains(1)
-        //XCTAssertTrue(handler.called)
+        //assertCalled()
     }
     
     func testContainsInOrder() {
         let a = ["a", "b", "c", "d"]
         
         assertThat(a).containsInOrder("a", "b")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).containsInOrder("b", "d")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).containsInOrder("a", "c", "b")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
     
     func testContainsOneOf() {
         let a = ["a", "b", "c", "d"]
         
         assertThat(a).containsOneOf("a", "x")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).containsOneOf("x", "a")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).containsOneOf("x", "d")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).containsOneOf("x", "y")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
     
     func testChaining() {
         let a = ["a", "b"]
         
         assertThat(a).contains("a").contains("b")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).contains("a").contains("c")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
     
     func testSet() {
@@ -59,22 +52,22 @@ class CollectionTypeMatcherTest : XCTestCase {
         a.insert("a")
         
         assertThat(a).contains("a")
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(a).contains("uknown")
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testIsEmpty() {
         assertThat([String]()).isEmpty()
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(["a"]).isEmpty()
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 
     func testHasCount() {
         assertThat([String]()).hasCount(0)
-        XCTAssertFalse(handler.called)
+        assertNotCalled()
         assertThat(["a"]).hasCount(0)
-        XCTAssertTrue(handler.called)
+        assertCalled()
     }
 }

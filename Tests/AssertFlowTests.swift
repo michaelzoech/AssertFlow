@@ -1,6 +1,6 @@
 
 import XCTest
-import AssertFlow
+@testable import AssertFlow
 
 class CaptureAssertHandler : AssertHandler {
     

@@ -2,7 +2,7 @@
 
 import Foundation
 import XCTest
-import AssertFlow
+@testable import AssertFlow
 
 /**
 Base class for tests using the AssertHandler for verification

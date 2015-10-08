@@ -2,25 +2,25 @@
 import Foundation
 import XCTest
 
-public class AssertHandler {
+class AssertHandler {
+
+    static var instance: AssertHandler = XCTestAssertHandler()
     
-    public static var instance: AssertHandler = XCTestAssertHandler()
-    
-    public init() {
+    init() {
     }
 
-    public func fail<T>(matcher: Matcher<T>, message: String) {
+    func fail<T>(matcher: Matcher<T>, message: String) {
         fail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
     }
 
-    public func fail(message: String, file: String, line: UInt) {
+    func fail(message: String, file: String, line: UInt) {
     }
 
 }
 
-public class XCTestAssertHandler : AssertHandler {
+class XCTestAssertHandler : AssertHandler {
     
-    override public func fail(message: String, file: String, line: UInt) {
+    override func fail(message: String, file: String, line: UInt) {
         XCTFail(message, file: file, line: line)
     }
 }

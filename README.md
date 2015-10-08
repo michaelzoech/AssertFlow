@@ -3,6 +3,23 @@
 AssertFlow is a matcher library to be used with XCTest.
 It provides fluent assertions with helpful error messages.
 
+````swift
+class MyTest: XCTestCase {
+
+    func testMyArray() {
+        let array = [1, 2, 3, 4]
+        assertThat(array).contains(2)
+        assertThat(array).isEmpty()
+        assertThat(array).containsInOrder(4, 3)
+    }
+
+    func testMyValues() {
+        let d = 42.0
+        assertThat(d).greaterThan(41)
+    }
+}
+````
+
 ### Provided Matchers
 
 AssertFlow provides matchers for the following types and more:

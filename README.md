@@ -1,5 +1,7 @@
 ## AssertFlow
 
+[![Build Status](https://travis-ci.org/crazymaik/AssertFlow.svg?branch=master)](https://travis-ci.org/crazymaik/AssertFlow)
+
 AssertFlow is a matcher library to be used with XCTest.
 It provides fluent assertions with helpful error messages.
 

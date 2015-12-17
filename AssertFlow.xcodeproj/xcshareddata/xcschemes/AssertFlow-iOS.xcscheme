@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29E7E8921BEB316900839CB1"
-               BuildableName = "AssertFlow-iOS.framework"
+               BuildableName = "AssertFlow.framework"
                BlueprintName = "AssertFlow-iOS"
                ReferencedContainer = "container:AssertFlow.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29E7E8921BEB316900839CB1"
-            BuildableName = "AssertFlow-iOS.framework"
+            BuildableName = "AssertFlow.framework"
             BlueprintName = "AssertFlow-iOS"
             ReferencedContainer = "container:AssertFlow.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29E7E8921BEB316900839CB1"
-            BuildableName = "AssertFlow-iOS.framework"
+            BuildableName = "AssertFlow.framework"
             BlueprintName = "AssertFlow-iOS"
             ReferencedContainer = "container:AssertFlow.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29E7E8921BEB316900839CB1"
-            BuildableName = "AssertFlow-iOS.framework"
+            BuildableName = "AssertFlow.framework"
             BlueprintName = "AssertFlow-iOS"
             ReferencedContainer = "container:AssertFlow.xcodeproj">
          </BuildableReference>

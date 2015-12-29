@@ -38,10 +38,6 @@ public struct MatchInfo<T> {
     }
 }
 
-public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = __FILE__, line: UInt = __LINE__) -> DictionaryMatcher<K,V> {
-    return DictionaryMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
-}
-
 public func assertThat(actual: String?, file: String = __FILE__, line: UInt = __LINE__) -> StringMatcher {
     return StringMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

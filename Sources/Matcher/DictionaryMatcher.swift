@@ -1,13 +1,22 @@
 
 import Foundation
 
-public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
-
-    public override init(actual: MatchInfo<Element>) {
-        super.init(actual: actual)
-    }
+public protocol WrappedDictionary: CollectionType, DictionaryLiteralConvertible {
     
-    public func containsKey(expected: K) -> Self {
+    typealias WrappedKey
+    typealias WrappedValue
+
+    subscript (key: WrappedKey) -> WrappedValue? { get }
+}
+
+extension Dictionary: WrappedDictionary {
+    public typealias WrappedKey = Dictionary.Key
+    public typealias WrappedValue = Dictionary.Value
+}
+
+public extension MatcherType where Element: WrappedDictionary {
+    
+    public func containsKey(expected: Element.WrappedKey) -> Self {
         if unpack () {
             if actual[expected] == nil {
                 fail("Expected dictionary to contain key:", expected: expected, actualMsg: "But key not found in:", actual: actual)
@@ -15,15 +24,14 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
         }
         return self
     }
+}
+
+public extension MatcherType where Element: WrappedDictionary, Element.WrappedValue: Equatable {
     
-    public func containsKey<X: Equatable>(key: K, value: X) -> Self{
+    public func containsKey(key: Element.WrappedKey, value: Element.WrappedValue) -> Self{
         if unpack() {
             if let actualValue = actual[key] {
-                if let castedValue = actualValue as? X {
-                    if castedValue != value {
-                        fail("Expected dictionary to contain key \(key) with value \(value)")
-                    }
-                } else {
+                if actualValue != value {
                     fail("Expected dictionary to contain key \(key) with value \(value)")
                 }
             } else {

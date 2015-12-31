@@ -6,62 +6,62 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
     typealias Item = Element.Generator.Element
     
     public func contains(expected: Item) -> Self {
-        if unpack() {
+        match.unpack { actual in
             for e in actual {
-                    if expected == e {
-                        return self
-                    }
+                if expected == e {
+                    return
+                }
             }
-            fail("Expected \(Element.self) to contain:", expected: expected, actualMsg: "But was: ", actual: actual)
+            match.fail("Expected \(Element.self) to contain:", expected: expected, actualMsg: "But was: ", actual: actual)
         }
         return self
     }
     
     public func containsInOrder(expected: Item...) -> Self {
-        if unpack() {
+        match.unpack { actual in
             var g = expected.generate()
             var next = g.next()
             for e in actual {
-                    if next == e {
-                        next = g.next()
-                        if next == nil {
-                            return self
-                        }
+                if next == e {
+                    next = g.next()
+                    if next == nil {
+                        return
                     }
+                }
             }
-            fail("Expected sequence to contain in order \(expected)")
+            match.fail("Expected sequence to contain in order \(expected)")
         }
         return self
     }
     
     public func containsOneOf(expected: Item...) -> Self {
-        if unpack() {
+        match.unpack { actual in
             for e in expected {
                 for a in actual {
-                        if (a == e) {
-                            return self
-                        }
+                    if (a == e) {
+                        return
+                    }
                 }
             }
-            fail("Expected sequence to contain one of \(expected)")
+            match.fail("Expected sequence to contain one of \(expected)")
         }
         return self
     }
 
     public func isEmpty() -> Self {
-        if unpack() {
+        match.unpack { actual in
             if !actual.isEmpty {
-                fail("Expected collection to be empty")
+                match.fail("Expected collection to be empty")
             }
         }
         return self
     }
 
     public func hasCount(expected: Element.Index.Distance) -> Self {
-        if unpack() {
+        match.unpack { actual in
             let count = actual.count
             if count != expected {
-                fail("Expected collection count to be \(expected), but was \(count)")
+                match.fail("Expected collection count to be \(expected), but was \(count)")
             }
         }
         return self

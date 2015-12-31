@@ -11,9 +11,9 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
 public extension DictionaryMatcher {
     
     public func containsKey(key: K) -> Self {
-        if unpack () {
+        match.unpack { actual in
             if actual[key] == nil {
-                fail("Expected dictionary to contain key:", expected: key, actualMsg: "But key not found in:", actual: actual)
+                match.fail("Expected dictionary to contain key:", expected: key, actualMsg: "But key not found in:", actual: actual)
             }
         }
         return self
@@ -23,13 +23,13 @@ public extension DictionaryMatcher {
 extension DictionaryMatcher where V: Equatable {
     
     public func containsKey(key: K, value: V) -> Self{
-        if unpack() {
+        match.unpack { actual in
             if let actualValue = actual[key] {
                 if actualValue != value {
-                    fail("Expected dictionary to contain key \(key) with value \(value)")
+                    match.fail("Expected dictionary to contain key \(key) with value \(value)")
                 }
             } else {
-                fail("Expected dictionary to contain key \(key)")
+                match.fail("Expected dictionary to contain key \(key)")
             }
         }
         return self

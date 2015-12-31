@@ -9,8 +9,8 @@ class AssertHandler {
     init() {
     }
 
-    func fail<T>(matcher: Matcher<T>, message: String) {
-        fail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
+    func fail<T>(match: MatchInfo<T>, message: String) {
+        fail(message, file: match.file, line: match.line)
     }
 
     func fail(message: String, file: String, line: UInt) {
@@ -35,6 +35,35 @@ public struct MatchInfo<T> {
         self.actual = actual
         self.file = file
         self.line = line
+    }
+    
+    public func unpack(@noescape block: (T) -> ()) {
+        guard let actual = actual else {
+            fail("MatchInfo for assertion is nil")
+            return
+        }
+        block(actual)
+    }
+    
+    public func fail(message: String) {
+        AssertHandler.instance.fail(self, message: message)
+    }
+    
+    public func fail<A, B>(expectedMsg: String, expected: A, actualMsg: String, actual: B) {
+        fail(expectedMsg + wrapIfMultiline("\(expected)") + actualMsg + wrapIfMultiline("\(actual)"))
+    }
+    
+    private func wrapIfMultiline(s: String) -> String {
+        let splitted = s.characters.split() { $0 == "\n" }.map { String($0) }
+        if splitted.count > 1 {
+            var result = "\n"
+            for e in splitted {
+                result += "\t" + e + "\n"
+            }
+            return result
+        } else {
+            return " \(s). "
+        }
     }
 }
 

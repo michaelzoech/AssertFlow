@@ -11,9 +11,9 @@ public class StringMatcher : Matcher<String> {
 public extension StringMatcher {
 
     public func contains(expected: String) -> Self {
-        if unpack() {
+        match.unpack { actual in
             if actual.rangeOfString(expected) == nil {
-                fail("Expected string \"\(actual)\" to contain \"\(expected)\"")
+                match.fail("Expected string \"\(actual)\" to contain \"\(expected)\"")
             }
         }
         return self

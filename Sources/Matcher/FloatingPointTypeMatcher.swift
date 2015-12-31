@@ -5,11 +5,11 @@ import Foundation
 public extension MatcherType where Element: FloatingPointType {
     
     public func isNaN() -> Self {
-        if unpack() {
+        match.unpack { actual in
             if actual.isNaN {
-                return self
+                return
             }
-            fail("Expected \(actual) to be NaN")
+            match.fail("Expected \(actual) to be NaN")
         }
         return self
     }

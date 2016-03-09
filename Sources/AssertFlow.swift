@@ -2,18 +2,18 @@
 import Foundation
 import XCTest
 
-class AssertHandler {
+public class AssertHandler {
 
-    static var instance: AssertHandler = XCTestAssertHandler()
+    public static var instance: AssertHandler = XCTestAssertHandler()
     
-    init() {
+    public init() {
     }
 
-    func fail<T>(matcher: Matcher<T>, message: String) {
+    public func fail<T>(matcher: Matcher<T>, message: String) {
         fail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
     }
 
-    func fail(message: String, file: String, line: UInt) {
+    public func fail(message: String, file: String, line: UInt) {
     }
 
 }

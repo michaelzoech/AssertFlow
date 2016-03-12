@@ -34,4 +34,27 @@ class EquatableMatcherTest: AssertFlowTestCase {
         assertThat(a).equals(nil)
         assertNotCalled()
     }
+
+    func testEqualsOfSameCollectionTypes() {
+        let a = ["a", "b"]
+        let b = ["a", "b"]
+        assertThat(a).equals(a)
+        assertNotCalled()
+        assertThat(a).equals(b)
+        assertNotCalled()
+    }
+
+    func testEqualsOfDifferingCollectionTypes() {
+        let a = ["a", "b"]
+        let b = ["a", "c"]
+        assertThat(a).equals(b)
+        assertCalled()
+    }
+
+    func testEqualsOfDifferingSizedCollectionTypes() {
+        let a = ["a", "b"]
+        let b = ["a"]
+        assertThat(a).equals(b)
+        assertCalled()
+    }
 }

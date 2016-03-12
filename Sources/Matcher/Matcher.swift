@@ -21,6 +21,13 @@ public class Matcher<T> : MatcherType {
         }
         return self
     }
+
+    public func notNil() -> Self {
+        if matchInfo.actual == nil {
+            fail("Expected value to be not nil, but was nil.")
+        }
+        return self
+    }
     
     public func unpack() -> Bool {
         if matchInfo.actual == nil {

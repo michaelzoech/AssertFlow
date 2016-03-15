@@ -26,4 +26,18 @@ class StringMatcherTest : AssertFlowTestCase {
         assertThat(s).contains("ll")
         assertCalled()
     }
+
+    func testHasPrefix() {
+        assertThat("Some string").hasPrefix("Some")
+        assertNotCalled()
+        assertThat("Some string").hasPrefix("string")
+        assertCalled()
+    }
+
+    func testHasSuffix() {
+        assertThat("Some string").hasSuffix("string")
+        assertNotCalled()
+        assertThat("Some string").hasSuffix("Some")
+        assertCalled()
+    }
 }

@@ -44,6 +44,8 @@ AssertFlow provides matchers for the following types and more:
   * isNan
 * String
   * contains
+  * hasPrefix
+  * hasSuffix
 
 ### Extending AssertFlow
 

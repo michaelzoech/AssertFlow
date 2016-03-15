@@ -18,6 +18,22 @@ public extension StringMatcher {
         }
         return self
     }
+
+    public func hasPrefix(prefix: String) -> Self {
+        if unpack() {
+            if !actual.hasPrefix(prefix) {
+                fail("Expected string \"\(actual)\" to have prefix \"\(prefix)\"")
+            }
+        }
+        return self
+    }
+
+    public func hasSuffix(suffix: String) -> Self {
+            if !actual.hasSuffix(suffix) {
+                fail("Expected string \"\(actual)\" to have suffix \"\(suffix)\"")
+            }
+        return self
+    }
 }
 
 public func assertThat(actual: String?, file: String = __FILE__, line: UInt = __LINE__) -> StringMatcher {

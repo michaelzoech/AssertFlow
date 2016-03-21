@@ -1,4 +1,8 @@
-## AssertFlow [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/crazymaik/AssertFlow/master/LICENSE.txt) [![Build Status](https://travis-ci.org/crazymaik/AssertFlow.svg?branch=master)](https://travis-ci.org/crazymaik/AssertFlow)
+## AssertFlow
+
+[![version](https://img.shields.io/badge/version-v0.1.1-blue.svg)](https://github.com/crazymaik/AssertFlow/releases/tag/v0.1.1)
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/crazymaik/AssertFlow/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/crazymaik/AssertFlow.svg?branch=master)](https://travis-ci.org/crazymaik/AssertFlow)
 
 AssertFlow is a matcher library to be used with XCTest.
 It provides fluent assertions with helpful error messages.
@@ -46,6 +50,9 @@ AssertFlow provides matchers for the following types and more:
   * contains
   * hasPrefix
   * hasSuffix
+* AnyObject
+  * isNil
+  * notNil
 
 ### Extending AssertFlow
 

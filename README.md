@@ -1,6 +1,6 @@
 ## AssertFlow
 
-[![version](https://img.shields.io/badge/version-v0.1.1-blue.svg)](https://github.com/crazymaik/AssertFlow/releases/tag/v0.1.1)
+[![version](https://img.shields.io/badge/version-v0.2.0-blue.svg)](https://github.com/crazymaik/AssertFlow/releases/tag/v0.2.0)
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/crazymaik/AssertFlow/master/LICENSE.txt)
 [![Build Status](https://travis-ci.org/crazymaik/AssertFlow.svg?branch=master)](https://travis-ci.org/crazymaik/AssertFlow)
 

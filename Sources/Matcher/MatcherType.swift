@@ -3,7 +3,7 @@ import Foundation
 
 public protocol MatcherType : class {
 
-    typealias Element
+    associatedtype Element
     
     var actual: Element { get }
 

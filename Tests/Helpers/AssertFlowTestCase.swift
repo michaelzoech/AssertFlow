@@ -20,12 +20,12 @@ class AssertFlowTestCase: XCTestCase {
     }
 
     /// Asserts that the AssertHandler.fail() has been called.
-    func assertCalled(file: String = __FILE__, line: UInt = __LINE__) {
+    func assertCalled(file: String = #file, line: UInt = #line) {
         XCTAssertTrue(assertHandler.called, file: file, line: line)
     }
 
     /// Asserts that the AssertHandler.fail() method has not been called.
-    func assertNotCalled(file: String = __FILE__, line: UInt = __LINE__) {
+    func assertNotCalled(file: String = #file, line: UInt = #line) {
         XCTAssertFalse(assertHandler.called, file: file, line: line)
     }
 }

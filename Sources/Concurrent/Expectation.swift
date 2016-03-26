@@ -17,7 +17,7 @@ public class Expectation {
     public func fulfill() {
         condition.lock()
         if (count > 0) {
-            count--
+            count -= 1
             if (count == 0) {
                 condition.signal()
             }
@@ -25,7 +25,7 @@ public class Expectation {
         condition.unlock()
     }
 
-    public func await(interval: NSTimeInterval, file: String = __FILE__, line: UInt = __LINE__) {
+    public func await(interval: NSTimeInterval, file: String = #file, line: UInt = #line) {
         let waitUntil = NSDate(timeIntervalSinceNow: interval)
         condition.lock()
         let fulfilled = count == 0 || condition.waitUntilDate(waitUntil)

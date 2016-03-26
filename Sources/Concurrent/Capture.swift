@@ -19,7 +19,7 @@ public class BaseCapture {
         condition.unlock()
     }
 
-    public func await(waitFor: NSTimeInterval, _ description: String = "", file: String = __FILE__, line: UInt = __LINE__) {
+    public func await(waitFor: NSTimeInterval, _ description: String = "", file: String = #file, line: UInt = #line) {
         let waitUntil = NSDate(timeIntervalSinceNow: waitFor)
         condition.lock()
         if !called {

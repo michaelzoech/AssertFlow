@@ -38,6 +38,6 @@ public struct MatchInfo<T> {
     }
 }
 
-public func assertThat<E>(actual: E?, file: String = __FILE__, line: UInt = __LINE__) -> Matcher<E> {
+public func assertThat<E>(actual: E?, file: String = #file, line: UInt = #line) -> Matcher<E> {
     return Matcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

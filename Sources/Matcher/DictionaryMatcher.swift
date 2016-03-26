@@ -36,6 +36,6 @@ extension DictionaryMatcher where V: Equatable {
     }
 }
 
-public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = __FILE__, line: UInt = __LINE__) -> DictionaryMatcher<K,V> {
+public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: String = #file, line: UInt = #line) -> DictionaryMatcher<K,V> {
     return DictionaryMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

@@ -25,7 +25,7 @@ public class Expectation {
         condition.unlock()
     }
 
-    public func await(interval: NSTimeInterval, file: String = #file, line: UInt = #line) {
+    public func await(interval: NSTimeInterval, file: StaticString = #file, line: UInt = #line) {
         let waitUntil = NSDate(timeIntervalSinceNow: interval)
         condition.lock()
         let fulfilled = count == 0 || condition.waitUntilDate(waitUntil)

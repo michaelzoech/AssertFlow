@@ -36,6 +36,6 @@ public extension StringMatcher {
     }
 }
 
-public func assertThat(actual: String?, file: String = #file, line: UInt = #line) -> StringMatcher {
+public func assertThat(actual: String?, file: StaticString = #file, line: UInt = #line) -> StringMatcher {
     return StringMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

@@ -12,8 +12,11 @@ public class BaseCapture {
         self.called = false
     }
 
-    public func captured() {
+    public func captured(file file: StaticString, line: UInt) {
         condition.lock()
+        if called {
+            AssertHandler.instance.fail("Capture called multiple times", file: file, line: line)
+        }
         called = true
         condition.signal()
         condition.unlock()
@@ -41,10 +44,10 @@ public class Capture1<Param0>: BaseCapture {
         super.init()
     }
 
-    public func capture() -> (Param0 -> ()) {
+    public func capture(file: StaticString = #file, line: UInt = #line) -> (Param0 -> ()) {
         return { p0 in
             self.p0 = p0
-            self.captured()
+            self.captured(file: file, line: line)
         }
     }
 }
@@ -58,11 +61,11 @@ public class Capture2<Param0, Param1>: BaseCapture {
         super.init()
     }
 
-    public func capture() -> ((Param0, Param1) -> ()) {
+    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1) -> ()) {
         return { (p0, p1) in
             self.p0 = p0
             self.p1 = p1
-            self.captured()
+            self.captured(file: file, line: line)
         }
     }
 }
@@ -77,12 +80,12 @@ public class Capture3<Param0, Param1, Param2>: BaseCapture {
         super.init()
     }
 
-    public func capture() -> ((Param0, Param1, Param2) -> ()) {
+    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2) -> ()) {
         return { (p0, p1, p2) in
             self.p0 = p0
             self.p1 = p1
             self.p2 = p2
-            self.captured()
+            self.captured(file: file, line: line)
         }
     }
 }
@@ -98,13 +101,13 @@ public class Capture4<Param0, Param1, Param2, Param3>: BaseCapture {
         super.init()
     }
 
-    public func capture() -> ((Param0, Param1, Param2, Param3) -> ()) {
+    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2, Param3) -> ()) {
         return { (p0, p1, p2, p3) in
             self.p0 = p0
             self.p1 = p1
             self.p2 = p2
             self.p3 = p3
-            self.captured()
+            self.captured(file: file, line: line)
         }
     }
 }

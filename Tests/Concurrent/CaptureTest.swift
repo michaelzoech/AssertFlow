@@ -85,4 +85,15 @@ class CaptureTest: AssertFlowTestCase {
         assertNotCalled()
     }
 
+    func testCallingCaptureMultipleTimes_shouldFailAssertHandler() {
+        var function: (String -> ())?
+        let myCapture = Capture1<String>()
+
+        function = myCapture.capture()
+
+        function!("a")
+        function!("a")
+
+        assertCalled()
+    }
 }

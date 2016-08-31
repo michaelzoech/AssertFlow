@@ -2,7 +2,7 @@
 
 import Foundation
 
-public extension MatcherType where Element: FloatingPointType {
+public extension MatcherType where Element: FloatingPoint {
     
     public func isNaN() -> Self {
         if unpack() {

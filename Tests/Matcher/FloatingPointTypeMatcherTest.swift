@@ -7,7 +7,7 @@ import AssertFlow
 class FloatingPointTypeMatcherTest: AssertFlowTestCase {
     
     func testIsNan() {
-        assertThat(Float.NaN).isNaN()
+        assertThat(Float.nan).isNaN()
         assertNotCalled()
         assertThat(2.3).isNaN()
         assertCalled()

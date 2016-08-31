@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class StringMatcher : Matcher<String> {
+open class StringMatcher : Matcher<String> {
     
     public override init(actual: MatchInfo<Element>) {
         super.init(actual: actual)
@@ -10,16 +10,16 @@ public class StringMatcher : Matcher<String> {
 
 public extension StringMatcher {
 
-    public func contains(expected: String) -> Self {
+    public func contains(_ expected: String) -> Self {
         if unpack() {
-            if actual.rangeOfString(expected) == nil {
+            if actual.range(of: expected) == nil {
                 fail("Expected string \"\(actual)\" to contain \"\(expected)\"")
             }
         }
         return self
     }
 
-    public func hasPrefix(prefix: String) -> Self {
+    public func hasPrefix(_ prefix: String) -> Self {
         if unpack() {
             if !actual.hasPrefix(prefix) {
                 fail("Expected string \"\(actual)\" to have prefix \"\(prefix)\"")
@@ -28,7 +28,7 @@ public extension StringMatcher {
         return self
     }
 
-    public func hasSuffix(suffix: String) -> Self {
+    public func hasSuffix(_ suffix: String) -> Self {
             if !actual.hasSuffix(suffix) {
                 fail("Expected string \"\(actual)\" to have suffix \"\(suffix)\"")
             }
@@ -36,6 +36,6 @@ public extension StringMatcher {
     }
 }
 
-public func assertThat(actual: String?, file: StaticString = #file, line: UInt = #line) -> StringMatcher {
+public func assertThat(_ actual: String?, file: StaticString = #file, line: UInt = #line) -> StringMatcher {
     return StringMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

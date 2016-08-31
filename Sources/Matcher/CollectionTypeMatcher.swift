@@ -1,11 +1,11 @@
 
 import Foundation
 
-public extension MatcherType where Element: CollectionType, Element.Generator.Element: Equatable {
+public extension MatcherType where Element: Collection, Element.Iterator.Element: Equatable {
     
-    typealias Item = Element.Generator.Element
+    typealias Item = Element.Iterator.Element
     
-    public func contains(expected: Item) -> Self {
+    public func contains(_ expected: Item) -> Self {
         if unpack() {
             for e in actual {
                     if expected == e {
@@ -17,9 +17,9 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
         return self
     }
     
-    public func containsInOrder(expected: Item...) -> Self {
+    public func containsInOrder(_ expected: Item...) -> Self {
         if unpack() {
-            var g = expected.generate()
+            var g = expected.makeIterator()
             var next = g.next()
             for e in actual {
                     if next == e {
@@ -34,7 +34,7 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
         return self
     }
     
-    public func containsOneOf(expected: Item...) -> Self {
+    public func containsOneOf(_ expected: Item...) -> Self {
         if unpack() {
             for e in expected {
                 for a in actual {
@@ -57,7 +57,7 @@ public extension MatcherType where Element: CollectionType, Element.Generator.El
         return self
     }
 
-    public func hasCount(expected: Element.Index.Distance) -> Self {
+    public func hasCount(_ expected: Element.IndexDistance) -> Self {
         if unpack() {
             let count = actual.count
             if count != expected {

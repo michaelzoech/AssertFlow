@@ -11,7 +11,7 @@ public protocol MatcherType : class {
     
     func unpack() -> Bool
     
-    func fail(message: String)
+    func fail(_ message: String)
     
-    func fail<A, B>(expectedMsg: String, expected: A, actualMsg: String, actual: B)
+    func fail<A, B>(_ expectedMsg: String, expected: A, actualMsg: String, actual: B)
 }

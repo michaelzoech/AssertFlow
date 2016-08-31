@@ -2,17 +2,17 @@
 import Foundation
 import XCTest
 
-public class BaseCapture {
+open class BaseCapture {
 
-    private var condition: NSCondition
-    private var called: Bool
+    fileprivate var condition: NSCondition
+    fileprivate var called: Bool
 
     public init() {
         self.condition = NSCondition()
         self.called = false
     }
 
-    public func captured(file file: StaticString, line: UInt) {
+    open func captured(file: StaticString, line: UInt) {
         condition.lock()
         if called {
             AssertHandler.instance.fail("Capture called multiple times", file: file, line: line)
@@ -22,29 +22,29 @@ public class BaseCapture {
         condition.unlock()
     }
 
-    public func await(waitFor: NSTimeInterval, _ description: String = "", file: StaticString = #file, line: UInt = #line) {
-        let waitUntil = NSDate(timeIntervalSinceNow: waitFor)
+    open func await(_ waitFor: TimeInterval, _ description: String = "", file: StaticString = #file, line: UInt = #line) {
+        let waitUntil = Date(timeIntervalSinceNow: waitFor)
         condition.lock()
         if !called {
-            condition.waitUntilDate(waitUntil)
+            condition.wait(until: waitUntil)
         }
         let result = called
         condition.unlock()
         if !result {
-            AssertHandler.instance.fail(description ?? "Capture not called", file: file, line: line)
+            AssertHandler.instance.fail(description, file: file, line: line)
         }
     }
 }
 
-public class Capture1<Param0>: BaseCapture {
+open class Capture1<Param0>: BaseCapture {
 
-    public var p0: Param0?
+    open var p0: Param0?
 
     public override init() {
         super.init()
     }
 
-    public func capture(file: StaticString = #file, line: UInt = #line) -> (Param0 -> ()) {
+    open func capture(_ file: StaticString = #file, line: UInt = #line) -> ((Param0) -> ()) {
         return { p0 in
             self.p0 = p0
             self.captured(file: file, line: line)
@@ -52,16 +52,16 @@ public class Capture1<Param0>: BaseCapture {
     }
 }
 
-public class Capture2<Param0, Param1>: BaseCapture {
+open class Capture2<Param0, Param1>: BaseCapture {
 
-    public var p0: Param0?
-    public var p1: Param1?
+    open var p0: Param0?
+    open var p1: Param1?
 
     public override init() {
         super.init()
     }
 
-    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1) -> ()) {
+    open func capture(_ file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1) -> ()) {
         return { (p0, p1) in
             self.p0 = p0
             self.p1 = p1
@@ -70,17 +70,17 @@ public class Capture2<Param0, Param1>: BaseCapture {
     }
 }
 
-public class Capture3<Param0, Param1, Param2>: BaseCapture {
+open class Capture3<Param0, Param1, Param2>: BaseCapture {
 
-    public var p0: Param0?
-    public var p1: Param1?
-    public var p2: Param2?
+    open var p0: Param0?
+    open var p1: Param1?
+    open var p2: Param2?
 
     public override init() {
         super.init()
     }
 
-    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2) -> ()) {
+    open func capture(_ file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2) -> ()) {
         return { (p0, p1, p2) in
             self.p0 = p0
             self.p1 = p1
@@ -90,18 +90,18 @@ public class Capture3<Param0, Param1, Param2>: BaseCapture {
     }
 }
 
-public class Capture4<Param0, Param1, Param2, Param3>: BaseCapture {
+open class Capture4<Param0, Param1, Param2, Param3>: BaseCapture {
 
-    public var p0: Param0?
-    public var p1: Param1?
-    public var p2: Param2?
-    public var p3: Param3?
+    open var p0: Param0?
+    open var p1: Param1?
+    open var p2: Param2?
+    open var p3: Param3?
 
     public override init() {
         super.init()
     }
 
-    public func capture(file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2, Param3) -> ()) {
+    open func capture(_ file: StaticString = #file, line: UInt = #line) -> ((Param0, Param1, Param2, Param3) -> ()) {
         return { (p0, p1, p2, p3) in
             self.p0 = p0
             self.p1 = p1

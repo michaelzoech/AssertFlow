@@ -3,7 +3,7 @@ import Foundation
 
 public extension MatcherType where Element: Equatable {
 
-    public func equals(expected: Element?) -> Self {
+    public func equals(_ expected: Element?) -> Self {
         if let expected = expected {
             if unpack() {
                 if actual != expected {
@@ -20,9 +20,9 @@ public extension MatcherType where Element: Equatable {
 }
 
 // Special case where CollectionType does not conform to Equatable, but Elements do.
-public extension MatcherType where Element: CollectionType, Element.Generator.Element: Equatable {
+public extension MatcherType where Element: Collection, Element.Iterator.Element: Equatable {
 
-    public func equals(expected: Element?) -> Self {
+    public func equals(_ expected: Element?) -> Self {
         if let expected = expected {
             if unpack() {
                 guard actual.count == expected.count else {

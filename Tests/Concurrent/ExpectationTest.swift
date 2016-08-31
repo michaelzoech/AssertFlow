@@ -21,10 +21,10 @@ class ExpectationTest: AssertFlowTestCase {
     func testCountedFulfilled_shouldFulfillAfterCount() {
         let expectation = Expectation(count: 2)
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             expectation.fulfill()
         })
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async(execute: {
             expectation.fulfill()
         })
 

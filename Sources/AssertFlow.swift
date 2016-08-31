@@ -2,25 +2,25 @@
 import Foundation
 import XCTest
 
-public class AssertHandler {
+open class AssertHandler {
 
-    public static var instance: AssertHandler = XCTestAssertHandler()
+    open static var instance: AssertHandler = XCTestAssertHandler()
     
     public init() {
     }
 
-    public func fail<T>(matcher: Matcher<T>, message: String) {
+    open func fail<T>(_ matcher: Matcher<T>, message: String) {
         fail(message, file: matcher.matchInfo.file, line: matcher.matchInfo.line)
     }
 
-    public func fail(message: String, file: StaticString, line: UInt) {
+    open func fail(_ message: String, file: StaticString, line: UInt) {
     }
 
 }
 
 class XCTestAssertHandler : AssertHandler {
     
-    override func fail(message: String, file: StaticString, line: UInt) {
+    override func fail(_ message: String, file: StaticString, line: UInt) {
         XCTFail(message, file: file, line: line)
     }
 }
@@ -38,6 +38,6 @@ public struct MatchInfo<T> {
     }
 }
 
-public func assertThat<E>(actual: E?, file: StaticString = #file, line: UInt = #line) -> Matcher<E> {
+public func assertThat<E>(_ actual: E?, file: StaticString = #file, line: UInt = #line) -> Matcher<E> {
     return Matcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

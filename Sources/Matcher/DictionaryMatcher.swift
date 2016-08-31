@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
+open class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
 
     public override init(actual: MatchInfo<Element>) {
         super.init(actual: actual)
@@ -10,7 +10,7 @@ public class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
 
 public extension DictionaryMatcher {
     
-    public func containsKey(key: K) -> Self {
+    public func containsKey(_ key: K) -> Self {
         if unpack () {
             if actual[key] == nil {
                 fail("Expected dictionary to contain key:", expected: key, actualMsg: "But key not found in:", actual: actual)
@@ -22,7 +22,7 @@ public extension DictionaryMatcher {
 
 extension DictionaryMatcher where V: Equatable {
     
-    public func containsKey(key: K, value: V) -> Self{
+    public func containsKey(_ key: K, value: V) -> Self{
         if unpack() {
             if let actualValue = actual[key] {
                 if actualValue != value {
@@ -36,6 +36,6 @@ extension DictionaryMatcher where V: Equatable {
     }
 }
 
-public func assertThat<K: Hashable, V>(actual: Dictionary<K,V>?, file: StaticString = #file, line: UInt = #line) -> DictionaryMatcher<K,V> {
+public func assertThat<K: Hashable, V>(_ actual: Dictionary<K,V>?, file: StaticString = #file, line: UInt = #line) -> DictionaryMatcher<K,V> {
     return DictionaryMatcher(actual: MatchInfo(actual: actual, file: file, line: line))
 }

@@ -6,12 +6,12 @@ import AssertFlow
 class CaptureTest: AssertFlowTestCase {
 
     func testCallCapture1FunctionOnBackgroundThread_shouldUnblockAndMatchPassedValue() {
-        var function: (String -> ())?
+        var function: ((String) -> ())?
         let myCapture = Capture1<String>()
 
         function = myCapture.capture()
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             function!("a")
         })
 
@@ -34,7 +34,7 @@ class CaptureTest: AssertFlowTestCase {
 
         function = myCapture.capture()
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             function!("a", 1)
         })
 
@@ -52,7 +52,7 @@ class CaptureTest: AssertFlowTestCase {
 
         function = myCapture.capture()
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             function!("a", 1, true)
         })
 
@@ -71,7 +71,7 @@ class CaptureTest: AssertFlowTestCase {
 
         function = myCapture.capture()
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             function!("a", 1, true, 2.5)
         })
 
@@ -86,7 +86,7 @@ class CaptureTest: AssertFlowTestCase {
     }
 
     func testCallingCaptureMultipleTimes_shouldFailAssertHandler() {
-        var function: (String -> ())?
+        var function: ((String) -> ())?
         let myCapture = Capture1<String>()
 
         function = myCapture.capture()

@@ -9,7 +9,8 @@ open class DictionaryMatcher<K: Hashable,V> : Matcher<Dictionary<K,V>> {
 }
 
 public extension DictionaryMatcher {
-    
+
+    @discardableResult
     public func containsKey(_ key: K) -> Self {
         if unpack () {
             if actual[key] == nil {
@@ -21,7 +22,8 @@ public extension DictionaryMatcher {
 }
 
 extension DictionaryMatcher where V: Equatable {
-    
+
+    @discardableResult
     public func containsKey(_ key: K, value: V) -> Self{
         if unpack() {
             if let actualValue = actual[key] {

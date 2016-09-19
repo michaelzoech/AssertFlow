@@ -3,7 +3,8 @@
 import Foundation
 
 public extension MatcherType where Element: FloatingPoint {
-    
+
+    @discardableResult
     public func isNaN() -> Self {
         if unpack() {
             if actual.isNaN {

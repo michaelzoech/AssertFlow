@@ -2,7 +2,8 @@
 import Foundation
 
 public extension MatcherType where Element: Comparable {
-    
+
+    @discardableResult
     public func greaterThan(_ expected: Element) -> Self {
         if unpack() {
             if actual <= expected {
@@ -11,7 +12,8 @@ public extension MatcherType where Element: Comparable {
         }
         return self
     }
-    
+
+    @discardableResult
     public func greaterOrEqual(_ expected: Element) -> Self {
         if unpack() {
             if actual < expected {
@@ -20,7 +22,8 @@ public extension MatcherType where Element: Comparable {
         }
         return self
     }
-    
+
+    @discardableResult
     public func smallerThan(_ expected: Element) -> Self {
         if unpack() {
             if actual >= expected {
@@ -29,7 +32,8 @@ public extension MatcherType where Element: Comparable {
         }
         return self
     }
-    
+
+    @discardableResult
     public func smallerOrEqual(_ expected: Element) -> Self {
         if unpack() {
             if actual > expected {

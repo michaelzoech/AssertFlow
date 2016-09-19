@@ -5,6 +5,7 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
     
     typealias Item = Element.Iterator.Element
     
+    @discardableResult
     public func contains(_ expected: Item) -> Self {
         if unpack() {
             for e in actual {
@@ -16,7 +17,8 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
         }
         return self
     }
-    
+
+    @discardableResult
     public func containsInOrder(_ expected: Item...) -> Self {
         if unpack() {
             var g = expected.makeIterator()
@@ -33,7 +35,8 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
         }
         return self
     }
-    
+
+    @discardableResult
     public func containsOneOf(_ expected: Item...) -> Self {
         if unpack() {
             for e in expected {
@@ -48,6 +51,7 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
         return self
     }
 
+    @discardableResult
     public func isEmpty() -> Self {
         if unpack() {
             if !actual.isEmpty {
@@ -57,6 +61,7 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
         return self
     }
 
+    @discardableResult
     public func hasCount(_ expected: Element.IndexDistance) -> Self {
         if unpack() {
             let count = actual.count

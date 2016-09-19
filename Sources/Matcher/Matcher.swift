@@ -14,7 +14,8 @@ open class Matcher<T> : MatcherType {
     public init(actual: MatchInfo<Element>) {
         self.matchInfo = actual
     }
-    
+
+    @discardableResult
     open func isNil() -> Self {
         if let a = matchInfo.actual {
             fail("Expected nil, but was \(a)")
@@ -22,6 +23,7 @@ open class Matcher<T> : MatcherType {
         return self
     }
 
+    @discardableResult
     open func notNil() -> Self {
         if matchInfo.actual == nil {
             fail("Expected value to be not nil, but was nil.")

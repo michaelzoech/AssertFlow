@@ -10,6 +10,7 @@ open class StringMatcher : Matcher<String> {
 
 public extension StringMatcher {
 
+    @discardableResult
     public func contains(_ expected: String) -> Self {
         if unpack() {
             if actual.range(of: expected) == nil {
@@ -19,6 +20,7 @@ public extension StringMatcher {
         return self
     }
 
+    @discardableResult
     public func hasPrefix(_ prefix: String) -> Self {
         if unpack() {
             if !actual.hasPrefix(prefix) {
@@ -28,6 +30,7 @@ public extension StringMatcher {
         return self
     }
 
+    @discardableResult
     public func hasSuffix(_ suffix: String) -> Self {
             if !actual.hasSuffix(suffix) {
                 fail("Expected string \"\(actual)\" to have suffix \"\(suffix)\"")

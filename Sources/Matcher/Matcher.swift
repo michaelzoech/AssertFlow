@@ -48,7 +48,7 @@ open class Matcher<T> : MatcherType {
         fail(expectedMsg + wrapIfMultiline("\(expected)") + actualMsg + wrapIfMultiline("\(actual)"))
     }
     
-    fileprivate func wrapIfMultiline(_ s: String) -> String {
+    private func wrapIfMultiline(_ s: String) -> String {
         let splitted = s.characters.split() { $0 == "\n" }.map { String($0) }
         if splitted.count > 1 {
             var result = "\n"

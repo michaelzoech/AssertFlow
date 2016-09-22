@@ -4,9 +4,9 @@ import XCTest
 
 open class Expectation {
 
-    fileprivate var count: UInt
-    fileprivate let description: String?
-    fileprivate let condition: NSCondition
+    private var count: UInt
+    private let description: String?
+    private let condition: NSCondition
 
     public init(count: UInt = 1, description: String? = nil) {
         self.count = count

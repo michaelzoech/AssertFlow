@@ -4,8 +4,8 @@ import XCTest
 
 open class BaseCapture {
 
-    fileprivate var condition: NSCondition
-    fileprivate var called: Bool
+    private var condition: NSCondition
+    private var called: Bool
 
     public init() {
         self.condition = NSCondition()

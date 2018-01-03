@@ -2,9 +2,9 @@
 import Foundation
 
 public extension MatcherType where Element: Equatable {
-
+    
     @discardableResult
-    public func equals(_ expected: Element?) -> Self {
+    fileprivate func equalsEquatable(_ expected: Element?) -> Self {
         if let expected = expected {
             if unpack() {
                 if actual != expected {
@@ -18,11 +18,26 @@ public extension MatcherType where Element: Equatable {
         }
         return self
     }
+    
+    @discardableResult
+    public func equals(_ expected: Element?) -> Self {
+        return equalsEquatable(expected)
+    }
+}
+
+// Special case String since on Swift 4, String is both Equatable and Collection
+// if we dont specialize, swift will not know whether to use the equals() from Equatable, or Collection
+public extension MatcherType where Element == String {
+    
+    @discardableResult
+    public func equals(_ expected: Element?) -> Self {
+        return equalsEquatable(expected)
+    }
 }
 
 // Special case where CollectionType does not conform to Equatable, but Elements do.
 public extension MatcherType where Element: Collection, Element.Iterator.Element: Equatable {
-
+    
     @discardableResult
     public func equals(_ expected: Element?) -> Self {
         if let expected = expected {
@@ -45,3 +60,6 @@ public extension MatcherType where Element: Collection, Element.Iterator.Element
         return self
     }
 }
+
+
+
